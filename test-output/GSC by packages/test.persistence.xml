@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="cristiano-PC" name="test.persistence.PostPersistenceTest" tests="3" failures="0" timestamp="20 Apr 2011 02:38:03 GMT" time="1.503" errors="0">
+  <testcase name="testPost" time="0.097" classname="test.persistence.PostPersistenceTest"/>
+  <testcase name="testOperatorPersistence" time="0.0090" classname="test.persistence.TestPerson"/>
+  <testcase name="testUserPersistence" time="0.012" classname="test.persistence.TestPerson"/>
+</testsuite>
