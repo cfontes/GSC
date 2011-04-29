@@ -5,9 +5,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import static org.testng.Assert.*;
-import org.testng.annotations.Test;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 

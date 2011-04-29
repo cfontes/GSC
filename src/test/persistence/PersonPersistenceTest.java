@@ -6,7 +6,7 @@ import static org.testng.Assert.*;
 import br.com.gsc.model.tableMapping.Operator;
 import br.com.gsc.model.tableMapping.User;
 
-public class TestPerson extends PersistenceTest {
+public class PersonPersistenceTest extends PersistenceTest {
 	
 	
 	@Test

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="cristiano-PC" name="test.persistence.PostPersistenceTest" tests="3" failures="0" timestamp="20 Apr 2011 02:38:03 GMT" time="1.503" errors="0">
-  <testcase name="testPost" time="0.097" classname="test.persistence.PostPersistenceTest"/>
-  <testcase name="testOperatorPersistence" time="0.0090" classname="test.persistence.TestPerson"/>
-  <testcase name="testUserPersistence" time="0.012" classname="test.persistence.TestPerson"/>
+<testsuite hostname="cristiano-PC" name="test.persistence.CompanyPersistenceTest" tests="5" failures="0" timestamp="29 Apr 2011 02:37:56 GMT" time="1.798" errors="0">
+  <testcase name="testCompanyPersistence" time="0.078" classname="test.persistence.CompanyPersistenceTest"/>
+  <testcase name="testProductPersistence" time="0.016" classname="test.persistence.CompanyPersistenceTest"/>
+  <testcase name="testOperatorPersistence" time="0.0080" classname="test.persistence.PersonPersistenceTest"/>
+  <testcase name="testUserPersistence" time="0.012" classname="test.persistence.PersonPersistenceTest"/>
+  <testcase name="testPost" time="0.02" classname="test.persistence.PostPersistenceTest"/>
 </testsuite>
