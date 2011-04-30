@@ -8,7 +8,9 @@
 <!-- 			 <class>br.com.gsc.model.tableMapping.Admin</class> -->
 			 <class>br.com.gsc.model.tableMapping.Post</class>
 			 <class>br.com.gsc.model.tableMapping.Topic</class>
-			 <class>br.com.gsc.model.tableMapping.Comment</class>			 
+			 <class>br.com.gsc.model.tableMapping.Comment</class>	
+			 <class>br.com.gsc.model.tableMapping.Company</class>
+			 <class>br.com.gsc.model.tableMapping.Product</class>
 				<properties> 
 					<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" /> 
 					<property name="hibernate.show_sql" value="true" /> 
