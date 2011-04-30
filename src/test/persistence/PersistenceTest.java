@@ -8,6 +8,11 @@ import javax.persistence.Persistence;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+/**
+ * Basic Persistence
+ * @author cristiano
+ *
+ */
 public class PersistenceTest {
 
 	protected EntityManagerFactory    emf;
