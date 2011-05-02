@@ -3,6 +3,7 @@ package br.com.gsc.model.tableMapping;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,13 +20,16 @@ public class Topic {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long 			id;
+	@Column(length=150, nullable=false)
 	private String			topicTitle;
+	@Column(length=500, nullable=false)
+	private String 			topicContent;
 	
 	@OneToMany(mappedBy="topic")
-	private List<Post> listOfPosts = new ArrayList<Post>();
+	private List<Post> 		listOfPosts = new ArrayList<Post>();
 	
 	@ManyToOne
-	@JoinColumn(name="person_id")
+	@JoinColumn(name="person_id", nullable=false)
 	private Person person;
 
 	public long getId() {
@@ -58,6 +62,14 @@ public class Topic {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+
+	public String getTopicContent() {
+		return topicContent;
+	}
+
+	public void setTopicContent(String topicContent) {
+		this.topicContent = topicContent;
 	}
 	
 }

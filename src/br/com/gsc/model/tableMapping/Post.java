@@ -19,29 +19,31 @@ public class Post {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	long id;
+	long 					id;
 	
 	@ManyToOne
-	@JoinColumn(name = "topics_id")
-	private Topic topic;
+	@JoinColumn(name = "topics_id", nullable=false)
+	private Topic 			topic;
 	
-	private String content;
+	@Column(length=500, nullable=false)
+	private String 			content;
 	
-	private String topicTitle;
+	@Column(length=150, nullable=false)
+	private String 			postTitle;
 	
 	@OneToMany(mappedBy="post")
-	private List<Comment> listOfComments = new ArrayList<Comment>();
+	private List<Comment> 	listOfComments = new ArrayList<Comment>();
 	
 	@ManyToOne
-	@JoinColumn(name="person_id")
+	@JoinColumn(name="person_id", nullable=false)
 	private Person person;
 
-	public String getTopicTitle() {
-		return topicTitle;
+	public String getPostTitle() {
+		return postTitle;
 	}
 
-	public void setTopicTitle(String topicTitle) {
-		this.topicTitle = topicTitle;
+	public void setPostTitle(String postTitle) {
+		this.postTitle = postTitle;
 	}
 
 	public String getContent() {

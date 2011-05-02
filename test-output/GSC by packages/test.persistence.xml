@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="cristiano-PC" name="test.persistence.PersonRepositoryTest" tests="7" failures="0" timestamp="2 May 2011 02:18:48 GMT" time="2.359" errors="0">
-  <testcase name="testAddPersonRepo" time="1.501" classname="test.persistence.PersonRepositoryTest"/>
-  <testcase name="testFindPersonRepo" time="0.2" classname="test.persistence.PersonRepositoryTest"/>
-  <testcase name="testPost" time="0.056" classname="test.persistence.PostPersistenceTest"/>
-  <testcase name="testCompanyPersistence" time="0.0080" classname="test.persistence.CompanyPersistenceTest"/>
-  <testcase name="testProductPersistence" time="0.01" classname="test.persistence.CompanyPersistenceTest"/>
-  <testcase name="testOperatorPersistence" time="0.0090" classname="test.persistence.PersonPersistenceTest"/>
-  <testcase name="testUserPersistence" time="0.0080" classname="test.persistence.PersonPersistenceTest"/>
+<testsuite hostname="cristiano-PC" name="test.persistence.CompanyPersistenceTest" tests="7" failures="0" timestamp="2 May 2011 03:05:25 GMT" time="1.994" errors="0">
+  <testcase name="testAddPersonRepo" time="1.25" classname="test.persistence.PersonRepositoryTest"/>
+  <testcase name="testFindPersonRepo" time="0.177" classname="test.persistence.PersonRepositoryTest"/>
+  <testcase name="testCompanyPersistence" time="0.01" classname="test.persistence.CompanyPersistenceTest"/>
+  <testcase name="testProductPersistence" time="0.0090" classname="test.persistence.CompanyPersistenceTest"/>
+  <testcase name="testOperatorPersistence" time="0.01" classname="test.persistence.PersonPersistenceTest"/>
+  <testcase name="testUserPersistence" time="0.013" classname="test.persistence.PersonPersistenceTest"/>
+  <testcase name="testTopic" time="0.011" classname="test.persistence.TopicPersistenceTest"/>
 </testsuite>

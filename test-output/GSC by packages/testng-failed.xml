@@ -3,29 +3,28 @@
 <suite verbose="0" name="Failed suite [GSC by packages]">
   <test name="test.persistence(failed)" preserve-order="false">
     <classes>
+      <class name="test.persistence.PersonPersistenceTest">
+        <methods>
+          <include name="cleanConnections"/>
+          <include name="prepareStatement"/>
+        </methods>
+      </class>
       <class name="test.persistence.PersonRepositoryTest">
         <methods>
-          <include name="testFindPersonRepo"/>
-          <include name="testAddPersonRepo"/>
           <include name="beforeTest"/>
+        </methods>
+      </class>
+      <class name="test.persistence.TopicPersistenceTest">
+        <methods>
+          <include name="testTopic"/>
+          <include name="cleanConnections"/>
+          <include name="prepareStatement"/>
         </methods>
       </class>
       <class name="test.persistence.CompanyPersistenceTest">
         <methods>
-          <include name="testCompanyPersistence"/>
-          <include name="testProductPersistence"/>
+          <include name="cleanConnections"/>
           <include name="prepareStatement"/>
-        </methods>
-      </class>
-      <class name="test.persistence.PostPersistenceTest">
-        <methods>
-          <include name="testPost"/>
-        </methods>
-      </class>
-      <class name="test.persistence.PersonPersistenceTest">
-        <methods>
-          <include name="testOperatorPersistence"/>
-          <include name="testUserPersistence"/>
         </methods>
       </class>
     </classes>

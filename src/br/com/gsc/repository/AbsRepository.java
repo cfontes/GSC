@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @param <T>
  */
-public abstract class Repository<T> {
+public abstract class AbsRepository<T> {
 
 	private RepositoryImpl jpa;
 	

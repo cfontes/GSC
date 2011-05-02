@@ -1,5 +1,6 @@
 package br.com.gsc.model.tableMapping;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,13 +18,14 @@ public class Comment {
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name = "posts_id")
+	@JoinColumn(name = "posts_id", nullable=false)
 	private Post post;
 	
 	@ManyToOne
-	@JoinColumn(name="person_id")
+	@JoinColumn(name="person_id", nullable=false)
 	private Person person;
 	
+	@Column(length=500, nullable=false)
 	private String content;
 
 	public int getId() {

@@ -3,10 +3,10 @@ package br.com.gsc.repository.objRepos;
 import java.util.List;
 
 import br.com.gsc.model.tableMapping.Person;
-import br.com.gsc.repository.Repository;
+import br.com.gsc.repository.AbsRepository;
 import br.com.gsc.repository.objInterfaces.IPersonRepository;
 
-public class PersonRepository extends Repository<Person> implements IPersonRepository{
+public class PersonRepository extends AbsRepository<Person> implements IPersonRepository{
 
 	@Override
 	public void addPerson(Person t) {
@@ -15,13 +15,13 @@ public class PersonRepository extends Repository<Person> implements IPersonRepos
 
 	@Override
 	public void removePerson(Person t) {
-		// TODO Auto-generated method stub
+		remove(t);
 		
 	}
 
 	@Override
 	public void updatePerson(Person t) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
