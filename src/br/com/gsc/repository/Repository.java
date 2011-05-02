@@ -8,36 +8,34 @@ import java.util.List;
  *
  * @param <T>
  */
-public class Repository<T> implements IRepository<T> {
+public abstract class Repository<T> {
 
 	private RepositoryImpl jpa;
 	
-	@Override
-	public void add(T t) {
+	public void setProvider(RepositoryImpl persistenceProvider){
+		this.jpa = persistenceProvider;
+	}
+	
+	protected void add(T t) {
+		jpa.add(t);
+		
+	}
+
+	protected void remove(T t) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void remove(T t) {
+	protected void update(T t) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void update(T t) {
-		// TODO Auto-generated method stub
-		
+	protected T read(T t, long id) {
+		return jpa.read(t, id);
 	}
 
-	@Override
-	public T read(T t, long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<T> findAll(String query, Object[] params) {
+	protected List<T> findAll(String query, Object[] params) {
 		// TODO Auto-generated method stub
 		return null;
 	}

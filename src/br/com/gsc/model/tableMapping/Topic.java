@@ -7,11 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="topics")
+@Table(name="tb_topics")
 public class Topic {
 
 	@Id
@@ -21,6 +23,10 @@ public class Topic {
 	
 	@OneToMany(mappedBy="topic")
 	private List<Post> listOfPosts = new ArrayList<Post>();
+	
+	@ManyToOne
+	@JoinColumn(name="person_id")
+	private Person person;
 
 	public long getId() {
 		return id;
@@ -44,6 +50,14 @@ public class Topic {
 
 	public void setTopicTitle(String topicTitle) {
 		this.topicTitle = topicTitle;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 	
 }

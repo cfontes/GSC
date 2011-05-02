@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import br.com.gsc.model.tableMapping.User;
 
@@ -56,16 +57,20 @@ public class RepositoryImpl {
 		closeAndCommitDBConnection();
 	}
 
-	@SuppressWarnings("unchecked")
 	public <T> T read(T t, long id) {
 		initAndBeginDbConnection();
-		T response = (T) em.find(t.getClass(), id);
+		T response = (T) em.find(User.class, id);
 		closeAndCommitDBConnection();
 		return response;
 	}
 
-	public <T> List<T> findAll(String query, Object[] params) {
-		return null;
+	public <T> List<T> findAll(T t, String queryName, String... param) {
+		Query query = em.createNamedQuery(queryName);
+		for(int i=0; i<param.length; i++){
+			query.setParameter(i, param[i]);
+		}
+		List<T> listOfObjects = query.getResultList();
+		return listOfObjects;
 	}
 	
 }

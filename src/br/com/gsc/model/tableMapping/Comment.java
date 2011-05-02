@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="comments")
+@Table(name="tb_comments")
 public class Comment {
 	
 	@Id
@@ -19,6 +19,10 @@ public class Comment {
 	@ManyToOne
 	@JoinColumn(name = "posts_id")
 	private Post post;
+	
+	@ManyToOne
+	@JoinColumn(name="person_id")
+	private Person person;
 	
 	private String content;
 
@@ -44,6 +48,14 @@ public class Comment {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 
 }
