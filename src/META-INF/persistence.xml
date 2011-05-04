@@ -3,9 +3,9 @@
  		<persistence-unit name="gsc" transaction-type="RESOURCE_LOCAL">
 			 <provider>org.hibernate.ejb.HibernatePersistence</provider>
 			 <class>br.com.gsc.model.tableMapping.Person</class>
-<!-- 			 <class>br.com.gsc.model.tableMapping.User</class> -->
-<!-- 			 <class>br.com.gsc.model.tableMapping.Operator</class> -->
-<!-- 			 <class>br.com.gsc.model.tableMapping.Admin</class> -->
+			 <class>br.com.gsc.model.tableMapping.User</class>
+			 <class>br.com.gsc.model.tableMapping.Operator</class>
+			 <class>br.com.gsc.model.tableMapping.Admin</class>
 			 <class>br.com.gsc.model.tableMapping.Post</class>
 			 <class>br.com.gsc.model.tableMapping.Topic</class>
 			 <class>br.com.gsc.model.tableMapping.Comment</class>	

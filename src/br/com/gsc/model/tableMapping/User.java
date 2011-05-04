@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
  
 @Entity
-@Table(name="tb_users")
+//@Table(name="tb_users")
 public class User extends Person{
 	
 	private String picture;

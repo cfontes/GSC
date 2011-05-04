@@ -36,7 +36,7 @@ public class Post {
 	
 	@ManyToOne
 	@JoinColumn(name="person_id", nullable=false)
-	private Person person;
+	private Person 			person;
 
 	public String getPostTitle() {
 		return postTitle;

@@ -30,7 +30,11 @@ public class Topic {
 	
 	@ManyToOne
 	@JoinColumn(name="person_id", nullable=false)
-	private Person person;
+	private Person 			person;
+	
+	@ManyToOne
+	@JoinColumn(name="product_id", nullable=false)
+	private Product 		product;
 
 	public long getId() {
 		return id;
@@ -70,6 +74,14 @@ public class Topic {
 
 	public void setTopicContent(String topicContent) {
 		this.topicContent = topicContent;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	
 }

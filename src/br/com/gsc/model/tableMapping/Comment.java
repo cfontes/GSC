@@ -15,18 +15,18 @@ public class Comment {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int 		id;
 	
 	@ManyToOne
 	@JoinColumn(name = "posts_id", nullable=false)
-	private Post post;
+	private Post		post;
 	
 	@ManyToOne
 	@JoinColumn(name="person_id", nullable=false)
-	private Person person;
+	private Person 		person;
 	
 	@Column(length=500, nullable=false)
-	private String content;
+	private String 		content;
 
 	public int getId() {
 		return id;
