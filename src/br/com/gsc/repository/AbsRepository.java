@@ -2,6 +2,9 @@ package br.com.gsc.repository;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * Class that call the right persistence provider to handle the request.
  * @author cristiano
@@ -10,29 +13,28 @@ import java.util.List;
  */
 public abstract class AbsRepository<T> {
 
-	private RepositoryImpl jpa;
+	@Autowired
+	private RepositoryImpl repositoryImpl;
 	
-	public void setProvider(RepositoryImpl persistenceProvider){
-		this.jpa = persistenceProvider;
+	public void setRepositoryImpl(RepositoryImpl persistenceProvider){
+		this.repositoryImpl = persistenceProvider;
 	}
 	
+	@Transactional
 	protected void add(T t) {
-		jpa.add(t);
-		
+		repositoryImpl.add(t);		
 	}
 
 	protected void remove(T t) {
-		// TODO Auto-generated method stub
-		
+		repositoryImpl.remove(t);	
 	}
-
+	
 	protected void update(T t) {
-		// TODO Auto-generated method stub
-		
+		repositoryImpl.update(t);		
 	}
 
-	protected T read(T t, long id) {
-		return jpa.read(t, id);
+	protected T read(T t, Object pk) {
+		return repositoryImpl.read(t, pk);
 	}
 
 	protected List<T> findAll(String query, Object[] params) {

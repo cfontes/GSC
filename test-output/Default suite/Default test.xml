@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="cristiano-PC" name="test.persistence.TestPerson" tests="2" failures="0" timestamp="20 Apr 2011 01:15:25 GMT" time="1.395" errors="0">
-  <testcase name="testOperatorPersistence" time="0.1" classname="test.persistence.TestPerson"/>
-  <testcase name="testUserPersistence" time="0.013" classname="test.persistence.TestPerson"/>
-</testsuite>

@@ -19,18 +19,16 @@ public class PersonRepository extends AbsRepository<Person> implements IPersonRe
 	@Override
 	public void removePerson(Person t) {
 		remove(t);
-		
 	}
 
 	@Override
 	public void updatePerson(Person t) {
-		
-		
+		update(t);
 	}
 
 	@Override
-	public Person findPersonByID(Person t, long id) {
-		return read(t, id);
+	public Person findPersonByID(Person t, String username) {
+		return read(t, username);
 	}
 	
 	public Person findPersonByUsername(Person t, String username){
@@ -41,7 +39,6 @@ public class PersonRepository extends AbsRepository<Person> implements IPersonRe
 
 	@Override
 	public List<Person> ListPeopleByID(String query, Object[] params) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

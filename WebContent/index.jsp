@@ -9,11 +9,6 @@
  <title>Spring 3.0 MVC Series: Index - ViralPatel.net</title>
 </head>
 	<body>
-<!-- 		<form action="/GSC/login.html" method="post"> -->
-<!-- 		  Username: <input type="text" name="username" /><br /> -->
-<!-- 		  Password: <input type="text" name="password" /><br /> -->
-<!-- 		  <input type="submit" value="Submit" /> -->
-<!-- 		</form> -->
 	    <a href="/GSC/hello.html">Say Hello</a>
 		<a href="/GSC/loginform.html">Login Form</a>
 	</body>

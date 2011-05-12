@@ -1,40 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="1" failed="1" total="6" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="GSC by packages" duration-ms="6435" started-at="2011-05-04T00:05:53Z" finished-at="2011-05-04T00:05:59Z">
+  <suite name="GSC by packages" duration-ms="3137" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:36Z">
     <groups>
       <group name="a">
         <method signature="test.persistence.PersonRepositoryTest.testAddPersonRepo()" name="testAddPersonRepo" class="test.persistence.PersonRepositoryTest"/>
       </group>
     </groups>
-    <test name="test.persistence" duration-ms="6435" started-at="2011-05-04T00:05:53Z" finished-at="2011-05-04T00:05:59Z">
+    <test name="test.persistence" duration-ms="3137" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:36Z">
       <class name="test.persistence.PersonPersistenceTest">
-        <test-method status="PASS" signature="prepareStatement()" name="prepareStatement" is-config="true" duration-ms="555" started-at="2011-05-04T00:05:59Z" finished-at="2011-05-04T00:05:59Z">
+        <test-method status="PASS" signature="prepareStatement()" name="prepareStatement" is-config="true" duration-ms="469" started-at="2011-05-11T22:45:35Z" finished-at="2011-05-11T22:45:36Z">
         </test-method>
-        <test-method status="PASS" signature="testOperatorPersistence()" name="testOperatorPersistence" duration-ms="51" started-at="2011-05-04T00:05:59Z" finished-at="2011-05-04T00:05:59Z">
+        <test-method status="PASS" signature="testOperatorPersistence()" name="testOperatorPersistence" duration-ms="41" started-at="2011-05-11T22:45:36Z" finished-at="2011-05-11T22:45:36Z">
         </test-method>
-        <test-method status="PASS" signature="testUserPersistence()" name="testUserPersistence" duration-ms="28" started-at="2011-05-04T00:05:59Z" finished-at="2011-05-04T00:05:59Z">
+        <test-method status="PASS" signature="testUserPersistence()" name="testUserPersistence" duration-ms="13" started-at="2011-05-11T22:45:36Z" finished-at="2011-05-11T22:45:36Z">
         </test-method>
-        <test-method status="PASS" signature="cleanConnections()" name="cleanConnections" is-config="true" duration-ms="2" started-at="2011-05-04T00:05:59Z" finished-at="2011-05-04T00:05:59Z">
-        </test-method>
-      </class>
-      <class name="test.persistence.PersonRepositoryTest">
-        <test-method status="PASS" signature="beforeTest()" name="beforeTest" is-config="true" duration-ms="16" started-at="2011-05-04T00:05:53Z" finished-at="2011-05-04T00:05:53Z">
-        </test-method>
-        <test-method status="PASS" signature="testAddPersonRepo()" name="testAddPersonRepo" duration-ms="4218" started-at="2011-05-04T00:05:53Z" finished-at="2011-05-04T00:05:57Z">
-        </test-method>
-        <test-method status="PASS" signature="testFindPersonRepo()" name="testFindPersonRepo" duration-ms="646" depends-on-groups="a" started-at="2011-05-04T00:05:57Z" finished-at="2011-05-04T00:05:58Z">
+        <test-method status="PASS" signature="cleanConnections()" name="cleanConnections" is-config="true" duration-ms="170" started-at="2011-05-11T22:45:36Z" finished-at="2011-05-11T22:45:36Z">
         </test-method>
       </class>
       <class name="test.persistence.CompanyPersistenceTest">
-        <test-method status="PASS" signature="prepareStatement()" name="prepareStatement" is-config="true" duration-ms="533" started-at="2011-05-04T00:05:58Z" finished-at="2011-05-04T00:05:59Z">
+        <test-method status="PASS" signature="prepareStatement()" name="prepareStatement" is-config="true" duration-ms="2171" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:35Z">
         </test-method>
-        <test-method status="PASS" signature="testCompanyPersistence()" name="testCompanyPersistence" duration-ms="43" started-at="2011-05-04T00:05:59Z" finished-at="2011-05-04T00:05:59Z">
+        <test-method status="PASS" signature="testCompanyPersistence()" name="testCompanyPersistence" duration-ms="50" started-at="2011-05-11T22:45:35Z" finished-at="2011-05-11T22:45:35Z">
         </test-method>
-        <test-method status="PASS" signature="testProductPersistence()" name="testProductPersistence" duration-ms="17" started-at="2011-05-04T00:05:59Z" finished-at="2011-05-04T00:05:59Z">
+        <test-method status="PASS" signature="testProductPersistence()" name="testProductPersistence" duration-ms="21" started-at="2011-05-11T22:45:35Z" finished-at="2011-05-11T22:45:35Z">
         </test-method>
-        <test-method status="PASS" signature="cleanConnections()" name="cleanConnections" is-config="true" duration-ms="2" started-at="2011-05-04T00:05:59Z" finished-at="2011-05-04T00:05:59Z">
+        <test-method status="PASS" signature="cleanConnections()" name="cleanConnections" is-config="true" duration-ms="152" started-at="2011-05-11T22:45:35Z" finished-at="2011-05-11T22:45:35Z">
+        </test-method>
+      </class>
+      <class name="test.persistence.PersonRepositoryTest">
+        <test-method status="PASS" signature="beforeTest()" name="beforeTest" is-config="true" duration-ms="8" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:33Z">
+        </test-method>
+        <test-method status="FAIL" signature="testAddPersonRepo()" name="testAddPersonRepo" duration-ms="8" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:33Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at test.persistence.PersonRepositoryTest.testAddPersonRepo(PersonRepositoryTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:110)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:174)
+]]>
+            </full-stacktrace>
+          </exception>
+        </test-method>
+        <test-method status="SKIP" signature="testFindPersonRepo()" name="testFindPersonRepo" duration-ms="0" depends-on-groups="a" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:33Z">
         </test-method>
       </class>
     </test>

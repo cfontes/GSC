@@ -22,38 +22,31 @@ import javax.persistence.Table;
 public abstract class Person {
 	
 
+	 
+//	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+//	 private Long           id;
 	 @Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	 private Long           id;
-	 @Column(length=50, nullable=false)
-	 private String			name;
+	 @Column(length=50, nullable=false, unique=true)
+	 private String			username;
 	 private String			email;
 	 private Date			date_of_creation;
 	 private String 		phone;
-	 private String			userName;
 	 private String 		password;
+	 private String			autority;
 	 @OneToMany(mappedBy="person")
-	 private List<Topic> listOfTopics;
+	 private List<Topic> 	listOfTopics;
 	 @OneToMany(mappedBy="person")
-	 private List<Post> listOfPosts;
+	 private List<Post> 	listOfPosts;
 	 @OneToMany(mappedBy="person")
-	 private List<Comment> listOfComments;
+	 private List<Comment> 	listOfComments;
 	
-	public Long getId() {
-		return id;
-	}
-	 
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
+//	public Long getId() {
+//		return id;
+//	}
+//	 
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 	
 	public String getEmail() {
 		return email;
@@ -88,11 +81,11 @@ public abstract class Person {
 	}
 	
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 	
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 	
 	public List<Topic> getTopics() {
@@ -129,6 +122,14 @@ public abstract class Person {
 	
 	public void addComment(Comment comment){
 		this.listOfComments.add(comment);
+	}
+
+	public String getAutority() {
+		return autority;
+	}
+
+	public void setAutority(String autority) {
+		this.autority = autority;
 	}
 	 
 

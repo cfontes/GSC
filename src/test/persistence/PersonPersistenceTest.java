@@ -13,35 +13,35 @@ public class PersonPersistenceTest extends PersistenceTest {
 	public void testUserPersistence(){
 		 tx.begin();
 		 User user = new User();
-		 user.setName("mickey");
+		 user.setUserName("mickey");
 		 em.persist(user);
 		 tx.commit();
 		 
 		 // look if the entity was persisted and got an id assigned
-		 assertNotNull(user.getId());
+		 assertNotNull(user.getUserName());
 		 
 		 // lookup entity
-		 Long id = user.getId();
-		 User userFromDatabase = em.find(User.class, id);
+		 String username = user.getUserName();
+		 User userFromDatabase = em.find(User.class, username);
 		 assertNotNull(userFromDatabase);
-		 assertEquals("mickey", userFromDatabase.getName());	
+		 assertEquals("mickey", userFromDatabase.getUserName());	
 	}
 	
 	@Test
 	public void testOperatorPersistence(){
 		 tx.begin();
 		 Operator user = new Operator();
-		 user.setName("roger");
+		 user.setUserName("roger");
 		 em.persist(user);
 		 tx.commit();
 		 
 		 // look if the entity was persisted and got an id assigned
-		 assertNotNull(user.getId());
+		 assertNotNull(user.getUserName());
 		 
 		 // lookup entity
-		 Long id = user.getId();
-		 Operator userFromDatabase = em.find(Operator.class, id);
+		 String username = user.getUserName();
+		 Operator userFromDatabase = em.find(Operator.class, username);
 		 assertNotNull(userFromDatabase);
-		 assertEquals("roger", userFromDatabase.getName());	
+		 assertEquals("roger", userFromDatabase.getUserName());	
 	}
 }

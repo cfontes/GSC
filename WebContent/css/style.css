@@ -1,0 +1,13 @@
+@CHARSET "ISO-8859-1";
+body{margin: 0; padding: 0; font-family: Tahoma}
+#bar_top{width: 100%; float: left; height: 145px; background: url(../img/flag_top.jpg) top repeat-x;}
+#wrapper{width: 950px; margin:0 auto; min-height: 500px}
+
+/**
+ * login
+ */
+.login{border: 2px solid #e9e7d8; width: 340px; min-height: 200px; margin: 100px 0 0 -200px; left: 50%; position: absolute; padding: 50px 30px; background-color: #f2f1e5}
+.login h2{color: #523c2f; font-size: 18px; margin: 0 0 30px 0; padding: 0;}
+.login .login_field{width: 270px; height:30px; border: 0; background-color: #fff}
+.login .btn_entra{background: url('../img/arrow_enter.png'); width: 30px; height: 30px; border: 0; background-color: transparent; float: right; margin-top: 30px}
+.login p{color: #523c2f;}
