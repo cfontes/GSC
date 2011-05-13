@@ -12,21 +12,35 @@
 	<div id="bar_top"></div>
 	<div class="login">
 		<h2>Login</h2>
-		<form:form action="loginform.html" modelAttribute="loginForm">
+		<%
+		if(request.getParameter("error") != null){
+			if (request.getParameter("error").equals("invalido")){
+		%>
+		<p>
+			<span style="color:red">
+			Usuário ou Senha inválidos
+			</span>
+		</p>
+		<%
+			} //fim do if equals
+		}//fim do if null
+		%>
+		
+		<form action="j_spring_security_check" method="post">
 			<table>
 			<tr>
-				<td>Usuario:<FONT color="red"><form:errors path="userName"/></FONT></td>
-				<td><form:input path="userName" class="login_field" type="text" /></td>
+				<td>Usuario:<FONT color="red"></FONT></td>
+				<td><input name="j_username" class="login_field" type="text" value="${not empty login_error ? SPRING_SECURITY_LAST_USERNAME : ''}"/></td>
 			</tr>
 			<tr>
-				<td>Senha:<FONT color="red"><form:errors path="password"/></FONT></td>
-				<td><form:password path="password" class="login_field" type="password"/></td>
+				<td>Senha:<FONT color="red"></FONT></td>
+				<td><input name="j_password" class="login_field" type="password"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="" class="btn_entra"/></td>
 			</tr>
 			</table>
-		</form:form>
+		</form>
 	</div>
 </body>
 </html>

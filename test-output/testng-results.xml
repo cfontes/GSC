@@ -2,37 +2,37 @@
 <testng-results skipped="1" failed="1" total="6" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="GSC by packages" duration-ms="3137" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:36Z">
+  <suite name="GSC by packages" duration-ms="2659" started-at="2011-05-13T01:10:11Z" finished-at="2011-05-13T01:10:14Z">
     <groups>
       <group name="a">
         <method signature="test.persistence.PersonRepositoryTest.testAddPersonRepo()" name="testAddPersonRepo" class="test.persistence.PersonRepositoryTest"/>
       </group>
     </groups>
-    <test name="test.persistence" duration-ms="3137" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:36Z">
+    <test name="test.persistence" duration-ms="2659" started-at="2011-05-13T01:10:11Z" finished-at="2011-05-13T01:10:14Z">
       <class name="test.persistence.PersonPersistenceTest">
-        <test-method status="PASS" signature="prepareStatement()" name="prepareStatement" is-config="true" duration-ms="469" started-at="2011-05-11T22:45:35Z" finished-at="2011-05-11T22:45:36Z">
+        <test-method status="PASS" signature="prepareStatement()" name="prepareStatement" is-config="true" duration-ms="449" started-at="2011-05-13T01:10:13Z" finished-at="2011-05-13T01:10:14Z">
         </test-method>
-        <test-method status="PASS" signature="testOperatorPersistence()" name="testOperatorPersistence" duration-ms="41" started-at="2011-05-11T22:45:36Z" finished-at="2011-05-11T22:45:36Z">
+        <test-method status="PASS" signature="testOperatorPersistence()" name="testOperatorPersistence" duration-ms="34" started-at="2011-05-13T01:10:14Z" finished-at="2011-05-13T01:10:14Z">
         </test-method>
-        <test-method status="PASS" signature="testUserPersistence()" name="testUserPersistence" duration-ms="13" started-at="2011-05-11T22:45:36Z" finished-at="2011-05-11T22:45:36Z">
+        <test-method status="PASS" signature="testUserPersistence()" name="testUserPersistence" duration-ms="8" started-at="2011-05-13T01:10:14Z" finished-at="2011-05-13T01:10:14Z">
         </test-method>
-        <test-method status="PASS" signature="cleanConnections()" name="cleanConnections" is-config="true" duration-ms="170" started-at="2011-05-11T22:45:36Z" finished-at="2011-05-11T22:45:36Z">
+        <test-method status="PASS" signature="cleanConnections()" name="cleanConnections" is-config="true" duration-ms="1" started-at="2011-05-13T01:10:14Z" finished-at="2011-05-13T01:10:14Z">
         </test-method>
       </class>
       <class name="test.persistence.CompanyPersistenceTest">
-        <test-method status="PASS" signature="prepareStatement()" name="prepareStatement" is-config="true" duration-ms="2171" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:35Z">
+        <test-method status="PASS" signature="prepareStatement()" name="prepareStatement" is-config="true" duration-ms="2011" started-at="2011-05-13T01:10:11Z" finished-at="2011-05-13T01:10:13Z">
         </test-method>
-        <test-method status="PASS" signature="testCompanyPersistence()" name="testCompanyPersistence" duration-ms="50" started-at="2011-05-11T22:45:35Z" finished-at="2011-05-11T22:45:35Z">
+        <test-method status="PASS" signature="testCompanyPersistence()" name="testCompanyPersistence" duration-ms="76" started-at="2011-05-13T01:10:13Z" finished-at="2011-05-13T01:10:13Z">
         </test-method>
-        <test-method status="PASS" signature="testProductPersistence()" name="testProductPersistence" duration-ms="21" started-at="2011-05-11T22:45:35Z" finished-at="2011-05-11T22:45:35Z">
+        <test-method status="PASS" signature="testProductPersistence()" name="testProductPersistence" duration-ms="16" started-at="2011-05-13T01:10:13Z" finished-at="2011-05-13T01:10:13Z">
         </test-method>
-        <test-method status="PASS" signature="cleanConnections()" name="cleanConnections" is-config="true" duration-ms="152" started-at="2011-05-11T22:45:35Z" finished-at="2011-05-11T22:45:35Z">
+        <test-method status="PASS" signature="cleanConnections()" name="cleanConnections" is-config="true" duration-ms="4" started-at="2011-05-13T01:10:13Z" finished-at="2011-05-13T01:10:13Z">
         </test-method>
       </class>
       <class name="test.persistence.PersonRepositoryTest">
-        <test-method status="PASS" signature="beforeTest()" name="beforeTest" is-config="true" duration-ms="8" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:33Z">
+        <test-method status="PASS" signature="beforeTest()" name="beforeTest" is-config="true" duration-ms="8" started-at="2011-05-13T01:10:11Z" finished-at="2011-05-13T01:10:11Z">
         </test-method>
-        <test-method status="FAIL" signature="testAddPersonRepo()" name="testAddPersonRepo" duration-ms="8" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:33Z">
+        <test-method status="FAIL" signature="testAddPersonRepo()" name="testAddPersonRepo" duration-ms="12" started-at="2011-05-13T01:10:11Z" finished-at="2011-05-13T01:10:11Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -66,7 +66,7 @@
             </full-stacktrace>
           </exception>
         </test-method>
-        <test-method status="SKIP" signature="testFindPersonRepo()" name="testFindPersonRepo" duration-ms="0" depends-on-groups="a" started-at="2011-05-11T22:45:33Z" finished-at="2011-05-11T22:45:33Z">
+        <test-method status="SKIP" signature="testFindPersonRepo()" name="testFindPersonRepo" duration-ms="1" depends-on-groups="a" started-at="2011-05-13T01:10:11Z" finished-at="2011-05-13T01:10:11Z">
         </test-method>
       </class>
     </test>

@@ -26,27 +26,4 @@ public class loginServlet {
             return "loginform";
     }
 	
-    @RequestMapping(method = RequestMethod.POST)
-    public String processForm(LoginForm loginForm, BindingResult result,Map model) {
-    		
-    		User user = new User();
-    		user.setUserName(loginForm.getUserName());
-    		user.setPassword(loginForm.getPassword());
-    		
-    		personRepository.addPerson(user);
-    		
-            String userName = "UserName";
-            String password = "password";
-            if (result.hasErrors()) {
-                    return "loginform";
-            }
-            loginForm = (LoginForm) model.get("loginForm");
-            if (!loginForm.getUserName().equals(userName)
-                            || !loginForm.getPassword().equals(password)) {
-                    return "loginform";
-            }
-            model.put("loginForm", loginForm);
-            return "loginsuccess";
-    }
-	
 }

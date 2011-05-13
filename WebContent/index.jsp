@@ -11,5 +11,7 @@
 	<body>
 	    <a href="/GSC/hello.html">Say Hello</a>
 		<a href="/GSC/loginform.html">Login Form</a>
+		<a href="admin">Clique aqui para acessar a área administrativa</a>
+		<a href="user">Clique aqui para acessar a área usuário</a>			
 	</body>
 </html>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
- 		<persistence-unit name="gsc" transaction-type="RESOURCE_LOCAL">
+ 		<persistence-unit name="gsc">
 			 <provider>org.hibernate.ejb.HibernatePersistence</provider>
 			 <class>br.com.gsc.model.tableMapping.Person</class>
 			 <class>br.com.gsc.model.tableMapping.User</class>
@@ -14,7 +14,7 @@
 				<properties> 
 					<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" /> 
 					<property name="hibernate.show_sql" value="true" /> 
-					<property name="hibernate.hbm2ddl.auto" value="create-drop" /> 
+					<property name="hibernate.hbm2ddl.auto" value="update" /> 
 					<property name="hibernate.format_sql" value="true" />  
 					<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" /> 
 					<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/gsc" /> 

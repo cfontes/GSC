@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="cristiano-PC" name="test.persistence.PersonRepositoryTest" tests="6" failures="1" timestamp="12 May 2011 01:45:36 GMT" time="3.137" errors="0">
-  <testcase name="testAddPersonRepo" time="0.0080" classname="test.persistence.PersonRepositoryTest">
+<testsuite hostname="cristiano-PC" name="test.persistence.CompanyPersistenceTest" tests="6" failures="1" timestamp="13 May 2011 04:10:14 GMT" time="2.659" errors="0">
+  <testcase name="testAddPersonRepo" time="0.012" classname="test.persistence.PersonRepositoryTest">
     <failure type="java.lang.NullPointerException">
       <![CDATA[java.lang.NullPointerException
 	at test.persistence.PersonRepositoryTest.testAddPersonRepo(PersonRepositoryTest.java:28)
@@ -32,11 +32,11 @@
 ]]>
     </failure>
   </testcase>
-  <testcase name="testFindPersonRepo" time="0.0" classname="test.persistence.PersonRepositoryTest">
+  <testcase name="testFindPersonRepo" time="0.0010" classname="test.persistence.PersonRepositoryTest">
     <skipped/>
   </testcase>
-  <testcase name="testCompanyPersistence" time="0.05" classname="test.persistence.CompanyPersistenceTest"/>
-  <testcase name="testProductPersistence" time="0.021" classname="test.persistence.CompanyPersistenceTest"/>
-  <testcase name="testOperatorPersistence" time="0.041" classname="test.persistence.PersonPersistenceTest"/>
-  <testcase name="testUserPersistence" time="0.013" classname="test.persistence.PersonPersistenceTest"/>
+  <testcase name="testCompanyPersistence" time="0.076" classname="test.persistence.CompanyPersistenceTest"/>
+  <testcase name="testProductPersistence" time="0.016" classname="test.persistence.CompanyPersistenceTest"/>
+  <testcase name="testOperatorPersistence" time="0.034" classname="test.persistence.PersonPersistenceTest"/>
+  <testcase name="testUserPersistence" time="0.0080" classname="test.persistence.PersonPersistenceTest"/>
 </testsuite>

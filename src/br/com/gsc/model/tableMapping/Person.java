@@ -32,7 +32,7 @@ public abstract class Person {
 	 private Date			date_of_creation;
 	 private String 		phone;
 	 private String 		password;
-	 private String			autority;
+	 private String			authority;
 	 @OneToMany(mappedBy="person")
 	 private List<Topic> 	listOfTopics;
 	 @OneToMany(mappedBy="person")
@@ -40,13 +40,6 @@ public abstract class Person {
 	 @OneToMany(mappedBy="person")
 	 private List<Comment> 	listOfComments;
 	
-//	public Long getId() {
-//		return id;
-//	}
-//	 
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
 	
 	public String getEmail() {
 		return email;
@@ -125,11 +118,11 @@ public abstract class Person {
 	}
 
 	public String getAutority() {
-		return autority;
+		return authority;
 	}
 
 	public void setAutority(String autority) {
-		this.autority = autority;
+		this.authority = autority;
 	}
 	 
 
