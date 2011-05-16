@@ -27,14 +27,8 @@ public class PersonRepository extends AbsRepository<Person> implements IPersonRe
 	}
 
 	@Override
-	public Person findPersonByID(Person t, String username) {
-		return read(t, username);
-	}
-	
-	public Person findPersonByUsername(Person t, String username){
-		
-		
-		return t;		
+	public Person findPersonByID(String username) {
+		return read(new Person(),username);
 	}
 
 	@Override

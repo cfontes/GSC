@@ -49,5 +49,13 @@ public class Product {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
+
+	public List<Topic> getListOfTopics() {
+		return listOfTopics;
+	}
+
+	public void setListOfTopics(List<Topic> listOfTopics) {
+		this.listOfTopics = listOfTopics;
+	}
 	
 }

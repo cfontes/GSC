@@ -10,5 +10,5 @@ public interface IPersonRepository {
 	public void removePerson(Person t);
 	public void updatePerson(Person t);
 	public List<Person> ListPeopleByID(String query, Object[] params);
-	Person findPersonByID(Person t, String username);
+	Person findPersonByID(String username);
 }

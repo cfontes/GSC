@@ -26,7 +26,7 @@
 		}//fim do if null
 		%>
 		
-		<form action="j_spring_security_check" method="post">
+		<form action="j_spring_security_check" method="post" >
 			<table>
 			<tr>
 				<td>Usuario:<FONT color="red"></FONT></td>
@@ -35,6 +35,11 @@
 			<tr>
 				<td>Senha:<FONT color="red"></FONT></td>
 				<td><input name="j_password" class="login_field" type="password"/></td>
+			</tr>
+			<tr><br></tr>
+			<tr>
+				<td><input type='checkbox' name='_spring_security_remember_me'/></td>
+				<td> Remember me on this computer.</td>			
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="" class="btn_entra"/></td>

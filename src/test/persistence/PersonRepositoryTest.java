@@ -31,7 +31,7 @@ public class PersonRepositoryTest {
 	
 	@Test(dependsOnGroups = "a")
 	public void testFindPersonRepo(){
-		User pFromDB = (User) pr.findPersonByID(p, p.getUserName());
+		User pFromDB = (User) pr.findPersonByID(p.getUserName());
 		assertNotNull(pFromDB);
 		assertEquals("Mago", pFromDB.getUserName());
 	}

@@ -11,3 +11,8 @@ body{margin: 0; padding: 0; font-family: Tahoma}
 .login .login_field{width: 270px; height:30px; border: 0; background-color: #fff}
 .login .btn_entra{background: url('../img/arrow_enter.png'); width: 30px; height: 30px; border: 0; background-color: transparent; float: right; margin-top: 30px}
 .login p{color: #523c2f;}
+
+/**
+* Logout
+*/
+.right{float:right;}

@@ -26,9 +26,13 @@
 	<context:annotation-config />	
 	
 	<sec:http auto-config="true">
+		<sec:intercept-url pattern="/css/**" filters="none"/>
+		<sec:intercept-url pattern="/img/**" filters="none"/>
 		<sec:form-login login-page="/loginform.html" authentication-failure-url="/loginform.html?error=invalido"/>
-		<sec:intercept-url pattern="/user/**" access="ROLE_USER"/>
+		<sec:intercept-url pattern="/loginform.html*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<sec:intercept-url pattern="/user/**" access="ROLE_USER,ROLE_ADMIN" />
 		<sec:intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+		<sec:intercept-url pattern="/cadastro.*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 	</sec:http>
 	
 	<sec:authentication-manager>
@@ -40,9 +44,9 @@
 	</sec:authentication-manager>
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
-	<property name="url" value="jdbc:mysql://localhost:3306/gsc" />
-	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-	<property name="username" value="gsc" />
-	<property name="password" value="gsc" />
+		<property name="url" value="jdbc:mysql://localhost:3306/gsc" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="username" value="gsc" />
+		<property name="password" value="gsc" />
 	</bean> 
 </beans>

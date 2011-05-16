@@ -7,6 +7,7 @@
 		<title>Logged</title>
 	</head>
 	<body>
+		<div id="bar_top"></div>
 			<h3>Welcome <core:out value="${loginForm.userName}" /></h3>
 		<table>
 			<tr>

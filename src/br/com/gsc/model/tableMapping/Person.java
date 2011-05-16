@@ -1,4 +1,4 @@
-package br.com.gsc.model.tableMapping;
+	package br.com.gsc.model.tableMapping;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Inheritance
 @DiscriminatorColumn(name="P_TYPE")
 @Table(name = "tb_people")
-public abstract class Person {
+public class Person {
 	
 
 	 
@@ -117,11 +117,11 @@ public abstract class Person {
 		this.listOfComments.add(comment);
 	}
 
-	public String getAutority() {
+	public String getAuthority() {
 		return authority;
 	}
 
-	public void setAutority(String autority) {
+	public void setAuthority(String autority) {
 		this.authority = autority;
 	}
 	 
