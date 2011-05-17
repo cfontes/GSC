@@ -18,6 +18,9 @@
 				<li><a href="admin">Clique aqui para acessar a área administrativa</a></li>
 				<li><a href="user">Clique aqui para acessar a área usuário</a></li>
 				<li><a href="/GSC/cadastro.html">Clique aqui para se cadastrar</a></li>
+				<li><a href="/GSC/listTopics.html">lista de topics</a></li>
+				<li><a href="/GSC/intern.html">Intern</a></li>
+				<li><a href="/GSC/teste.html">Teste</a></li>
 			</ul>
 			</div>
 		</div>			

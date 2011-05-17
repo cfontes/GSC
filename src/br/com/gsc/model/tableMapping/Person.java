@@ -13,12 +13,15 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.springframework.transaction.annotation.Transactional;
  
 @Entity
 //@MappedSuperclass
 @Inheritance
 @DiscriminatorColumn(name="P_TYPE")
 @Table(name = "tb_people")
+@Transactional
 public class Person {
 	
 

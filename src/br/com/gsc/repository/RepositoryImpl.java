@@ -3,15 +3,14 @@ package br.com.gsc.repository;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
+import javax.persistence.FetchType;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import br.com.gsc.model.tableMapping.User;
 
 /**
  * Class that handles the requests and fetch/add then to the DB.
@@ -24,6 +23,7 @@ import br.com.gsc.model.tableMapping.User;
  *
  */
 @Repository("RepositoryImpl")
+@Transactional
 public class RepositoryImpl {
 	
 	
@@ -45,7 +45,6 @@ public class RepositoryImpl {
 //		emf.close();
 //	}
 	
-	@Transactional
 	public <T> void add(T t) {			
 		 this.em.persist(t);
 	}

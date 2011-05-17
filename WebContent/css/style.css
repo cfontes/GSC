@@ -1,7 +1,28 @@
 @CHARSET "ISO-8859-1";
 body{margin: 0; padding: 0; font-family: Tahoma}
-#bar_top{width: 100%; float: left; height: 145px; background: url(../img/flag_top.jpg) top repeat-x;}
+ul{list-style: none;}
+ul li{display: inline}
+h4, h5, p{margin: 0 0 7px 0; padding: 0}
+p{color: #7b5a47; font-size: 14px;}
+#bar_top{width: 100%; float: left; height: 115px; background: url(../img/flag_top.jpg) top repeat-x; padding: 30px 0 0 0; border-bottom: 1px solid #dcd6c8}
+#bar_top_content{width: 950px; margin: 0 auto; min-height: 115px; text-shadow: 3px 1px 2px rgba(0, 0, 0, 0.3);}
+#bar_top_content h2{color: #998d6a}
+#bar_top_content span{color: #f1a02d; text-shadow: gray; padding-left: 15px}
 #wrapper{width: 950px; margin:0 auto; min-height: 500px}
+#title-site{float: left; height: 100px; width: 200px}
+
+/**
+ * Menu
+ **/
+#menu{float: right; width: 500px; height: 51px; margin-top: 30px}
+.menu_left{background: url(../img/menu_side_left.jpg) no-repeat; width: 7px; height: 51px; float: left}
+.menu_middle{background: url(../img/menu_middle.jpg) repeat-x; width: 484px; height: 51px; float: left;}
+.menu_right{background: url(../img/menu_side_right.jpg) no-repeat; width: 7px; height: 51px; float: left}
+#menu ul{margin: 13px 0 0 0; padding: 0; width: 100%; text-align:center;}
+#menu ul li{padding: 0 30px}
+#menu ul li a{color: #491701; font-size: 10px; font-weight: bold;}
+#menu ul li a:hover{color: #f1a02d}
+
 
 /**
  * login
@@ -11,8 +32,14 @@ body{margin: 0; padding: 0; font-family: Tahoma}
 .login .login_field{width: 270px; height:30px; border: 0; background-color: #fff}
 .login .btn_entra{background: url('../img/arrow_enter.png'); width: 30px; height: 30px; border: 0; background-color: transparent; float: right; margin-top: 30px}
 .login p{color: #523c2f;}
+.e_login{color: red;font-size: 11px;}
 
 /**
-* Logout
-*/
-.right{float:right;}
+  * Conteudo 
+  * */
+.title{font-size: 17px; color: #523c2f; font-weight: bold;}
+.sub-title{font-size: 14px; color: #7b5a47; font-weight: bold;}
+.link_medium{text-decoration: underline; font-weight: bold; color: #7b5a47; font-size: 14px;}
+.profile_pic{border: 4px solid #c9bcad}
+#wrapper{width: 950px; min-height: 100px; margin: 145px 0 0 -475px; border: 1px solid #dcd6c8; position: absolute; left: 50%}
+#col-left{float: left; width: 540px; min-height: 370px; padding: 30px 0 0 30px;  border-right: 1px solid #dcd6c8;}

@@ -9,9 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Entity
 @Table(name="tb_companies")
+@Transactional
 public class Company {
 	
 	@Id

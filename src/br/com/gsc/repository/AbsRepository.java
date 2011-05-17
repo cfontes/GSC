@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @param <T>
  */
+
 public abstract class AbsRepository<T> {
 
 	@Autowired
@@ -20,7 +21,6 @@ public abstract class AbsRepository<T> {
 		this.repositoryImpl = persistenceProvider;
 	}
 	
-	@Transactional
 	protected void add(T t) {
 		repositoryImpl.add(t);		
 	}

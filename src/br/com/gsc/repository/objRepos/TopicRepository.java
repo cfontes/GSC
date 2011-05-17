@@ -41,7 +41,7 @@ public class TopicRepository  extends AbsRepository<Topic> implements ITopicRepo
 
 	@Override
 	public Topic findTopicByID(Long id) {
-		return findTopicByID(id);	
+		return read(new Topic(),id);	
 	}
 
 }

@@ -11,23 +11,19 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.gsc.model.tableMapping.Product;
 import br.com.gsc.model.tableMapping.Topic;
 import br.com.gsc.repository.objRepos.ProductRepository;
-import br.com.gsc.repository.objRepos.TopicRepository;
 
 @Controller
-@RequestMapping("/listTopics.html")
-public class ListTopicController {
-	
+@RequestMapping("/*")
+public class InternController {
+
 	@Autowired
 	ProductRepository pRepo;
 	
-	@Autowired
-	TopicRepository tRepo;
-	
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView showTopics(ModelAndView modelAndView){
+	public ModelAndView showPage(){
 		Product prod = pRepo.findTProductByID((long) 1);
 		prod.getListOfTopics().size();
 		List<Topic> lista = prod.getListOfTopics();
-		return new ModelAndView("listTopics").addObject("topics",lista);
+		return new ModelAndView("intern").addObject("topics",lista);
 	}
 }
