@@ -35,7 +35,7 @@ public class AddUserController {
 	public String cadastrarUser(@ModelAttribute("cadastro") CadastroUser cadastro){
 		
 		User user = new User();
-		user.setUserName(cadastro.getUserName());
+		user.setUsername(cadastro.getUserName());
 		user.setPassword(cadastro.getPassword());
 		user.setEmail(cadastro.getEmail());
 		user.setAuthority(cadastro.getAuth());

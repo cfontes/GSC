@@ -20,19 +20,19 @@ public class PersonRepositoryTest {
 	@BeforeTest
 	public void beforeTest(){
 		p = new User();
-		p.setUserName("Mago");
+		p.setUsername("teste");
 	}
 	
 	@Test(groups = "a")
 	public void testAddPersonRepo(){
 		pr.addPerson(p);
-		assertNotNull(p.getUserName());
+		assertNotNull(p.getUsername());
 	}
 	
 	@Test(dependsOnGroups = "a")
 	public void testFindPersonRepo(){
-		User pFromDB = (User) pr.findPersonByID(p.getUserName());
+		User pFromDB = (User) pr.findPersonByID(p.getUsername());
 		assertNotNull(pFromDB);
-		assertEquals("Mago", pFromDB.getUserName());
+		assertEquals("teste", pFromDB.getUsername());
 	}
 }

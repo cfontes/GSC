@@ -16,15 +16,15 @@
 		<table>
 			<tr>
 				<td>Nome</td>
-				<td><form:input path="userName" type="text"/></td>
+				<td><form:input path="userName" type="text" class="login_field"/></td>
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><form:input path="password"  type="password" /></td>
+				<td><form:input path="password"  type="password" class="login_field" /></td>
 			</tr>
 			<tr>
 				<td>E-mail</td>
-				<td><form:input path="email"  type="text" /></td>
+				<td><form:input path="email"  type="text" class="login_field"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Cadastrar" /></td>

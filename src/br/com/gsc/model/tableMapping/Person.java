@@ -21,7 +21,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Inheritance
 @DiscriminatorColumn(name="P_TYPE")
 @Table(name = "tb_people")
-@Transactional
 public class Person {
 	
 
@@ -76,12 +75,12 @@ public class Person {
 		this.date_of_creation = date_of_creation;
 	}
 	
-	public String getUserName() {
+	public String getUsername() {
 		return username;
 	}
 	
-	public void setUserName(String userName) {
-		this.username = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	public List<Topic> getTopics() {

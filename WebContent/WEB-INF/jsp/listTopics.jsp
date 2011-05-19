@@ -17,7 +17,7 @@
 		List<Topic> topics = (List<Topic>) request.getAttribute("topics");
 		for(Topic topic : topics){
 			out.println(topic.getTopicTitle());
-			out.println(topic.getPerson().getUserName());
+			out.println(topic.getPerson().getUsername());
 			out.println("<br>");
 		}
 	%>

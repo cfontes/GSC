@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<%@page import="br.com.gsc.model.tableMapping.Topic"%>
-<%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page import="br.com.gsc.model.tableMapping.Topic"%>
+<%@ page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,17 +32,25 @@
 	</div>
 	<div id="wrapper">
 		<div id="col-left">
-		<%
+<%-- 		<%
 			List<Topic> topics = (List<Topic>) request.getAttribute("topics");
 			for(Topic topic : topics){
 				out.println("<h4 class=\"title\">"+topic.getTopicTitle()+"</h4>");
 				out.println("<h5 class=\"sub-title\">"+topic.getTopicContent()+"</h5>");
 				out.println("<a href=\"#\" class=\"link_medium\">"+topic.getPerson().getUserName()+"</a>");
 				out.println("<p>teste conteudo</p>");
-				out.println("<img class=\"profile_pic\" src=\"img/img_perfil.jpg\" border=\"0\"/>");
+// 				out.println("<img class=\"profile_pic\" src=\"img/img_perfil.jpg\" border=\"0\"/>");
 				out.println("<br>");
 			}
-		%>	
+		%> --%>
+			<br>
+			<c:forEach items="${topics}" var="topic">
+				<br>
+				<h4 class="title"><c:out value="${topic.topicTitle}"/></h4>
+				<h5 class="sub-title"><c:out value="${topic.topicContent}"/></h5>
+				<a href="<c:url value="/user/${topic.person.username}.html"/>">${topic.person.username}</a>
+				<input type="button" value="Add Post">
+			</c:forEach>
 		</div>
 	</div>
 </body>
