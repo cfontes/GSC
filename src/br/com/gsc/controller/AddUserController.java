@@ -1,5 +1,6 @@
 package br.com.gsc.controller;
 
+import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.gsc.form.CadastroUser;
 import br.com.gsc.model.tableMapping.User;
@@ -20,22 +23,19 @@ public class AddUserController {
 	private PersonRepository jpa;
 	
 	@ModelAttribute("CadastroUser")
-	public CadastroUser createForm(){
-		System.out.println("cadastro");
+	public CadastroUser createForm(){;
 		return new CadastroUser();
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm(Map model){
-		System.out.println("Aqui cadastro");
 		CadastroUser cadastro = new CadastroUser();
 		model.put("CadastroUser", cadastro);
 		return "cadastro";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String cadastrarUser(@ModelAttribute("cadastro") CadastroUser cadastro){
-		
+	public String cadastrarUser(@ModelAttribute("cadastro") CadastroUser cadastro){		
 		User user = new User();
 		user.setUsername(cadastro.getUserName());
 		user.setPassword(cadastro.getPassword());
@@ -44,5 +44,5 @@ public class AddUserController {
 		jpa.addPerson(user);
 		return "redirect:/index.jsp";
 	}
-
+	
 }

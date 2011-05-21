@@ -27,6 +27,7 @@
 	
 	<sec:http auto-config="true">
 		<sec:intercept-url pattern="/css/**" filters="none"/>
+		<sec:intercept-url pattern="/js/**" filters="none"/>
 		<sec:intercept-url pattern="/img/**" filters="none"/>
 		<sec:intercept-url pattern="/loginform.*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 		<sec:intercept-url pattern="/user/**" access="ROLE_USER,ROLE_ADMIN" />
