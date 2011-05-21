@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
  
 @Entity
 //@MappedSuperclass
+@Transactional
 @Inheritance
 @DiscriminatorColumn(name="P_TYPE")
 @Table(name = "tb_people")

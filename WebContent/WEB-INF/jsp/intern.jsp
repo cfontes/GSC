@@ -20,10 +20,10 @@
 				<div class="menu_left"></div>
 				<div class="menu_middle">
 					<ul>						
-						<li><a href="user">Login</a></li>
-						<li><a href="/GSC/cadastro.html">Cadastro</a></li>
-						<li><a href="/GSC/listTopics.html">test</a></li>
-						<li><a href="admin">Área adminstrativa</a></li>
+						<li><a href="<c:url value="/user/index.html"/>">Login</a></li>
+						<li><a href="<c:url value="cadastro.html"/>">Cadastro</a></li>
+						<li><a href="<c:url value="/user/addtopic.html"/>">test</a></li>
+						<li><a href="<c:url value="/admin/index.html"/>">Área adminstrativa</a></li>
 					</ul>
 				</div>
 				<div class="menu_right"></div>
@@ -46,9 +46,9 @@
 			<br>
 			<c:forEach items="${topics}" var="topic">
 				<br>
-				<h4 class="title"><c:out value="${topic.topicTitle}"/></h4>
+				<h4 class="title"><a href="<c:url value="/topic/${topic.topicTitle}.html"/>">${topic.topicTitle}</a></h4>
 				<h5 class="sub-title"><c:out value="${topic.topicContent}"/></h5>
-				<a href="<c:url value="/user/${topic.person.username}.html"/>">${topic.person.username}</a>
+				<c:out value="${topic.person.username}"></c:out>
 				<input type="button" value="Add Post">
 			</c:forEach>
 		</div>

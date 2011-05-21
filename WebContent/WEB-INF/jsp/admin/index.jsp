@@ -9,7 +9,7 @@
 </head>
 	<body>
 			<div id="bar_top"></div>
-			<h2>Parabéns você esta logado, <core:out value="${loginForm.userName}" /></h2>
+			<h2>Parabéns você esta logado, <core:out value="${user}" /></h2>
 			<p>Faça o logout <a href="../j_spring_security_logout">clicando aqui</a>
 	</body>
 </html>

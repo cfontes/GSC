@@ -21,11 +21,13 @@ public class AddUserController {
 	
 	@ModelAttribute("CadastroUser")
 	public CadastroUser createForm(){
+		System.out.println("cadastro");
 		return new CadastroUser();
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm(Map model){
+		System.out.println("Aqui cadastro");
 		CadastroUser cadastro = new CadastroUser();
 		model.put("CadastroUser", cadastro);
 		return "cadastro";

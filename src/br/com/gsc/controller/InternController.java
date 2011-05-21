@@ -13,7 +13,7 @@ import br.com.gsc.model.tableMapping.Topic;
 import br.com.gsc.repository.objRepos.ProductRepository;
 
 @Controller
-@RequestMapping("/*")
+@RequestMapping("/intern.html")
 public class InternController {
 
 	@Autowired

@@ -9,7 +9,8 @@
 	<title>Insert title here</title>
 </head>
 <body>
-	<div id="bar_top"></div>
+	<div id="bar_top">
+		<div id="bar_top_content">
 	<ul>
 		<li>adicione um topico<a href="/GSC/addtopic.html">clique aqui</a></li>
 	</ul>

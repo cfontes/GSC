@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
  
 @Entity
 //@Table(name="tb_users")
-@Transactional
 public class User extends Person{
 	
 	private String picture;

@@ -11,21 +11,21 @@
 <body>
 <br>
 <br>
-	<form:form action="/GSC/addtopic.html" method="post" modelAttribute="topic">
+	<div id="bar_top">
+	<form:form action="/GSC/user/addtopic.html" modelAttribute="topic" method="post">
 		<table>
 			<tr>
 				<td>Topic name</td>
-				<td><form:input path="topicTitle"/></td>
+				<td><form:input path="topicTitle" type="text" class="login_field"/></td>
 			</tr>
 			<tr>
 				<td>Topic Description</td>
-				<td><form:input path="topicContent"/><td>
+				<td><form:input path="topicContent" type="text" class="login_field"/><td>
 			</tr>
 			<tr>
-				<td><input type="submit" value="Adicionar Topico"/></td>
+				<td colspan="2"><input type="submit" value="Adicionar Topico"/></td>
 			</tr>
 		</table>
 	</form:form>
-
 </body>
 </html>

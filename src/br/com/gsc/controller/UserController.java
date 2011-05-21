@@ -18,8 +18,8 @@ import br.com.gsc.repository.objRepos.ProductRepository;
 import br.com.gsc.repository.objRepos.TopicRepository;
 
 @Controller
-@RequestMapping("/addtopic.html")
-public class AddTopicController {
+@RequestMapping("/user/**")
+public class UserController {
 
 	@Autowired
 	TopicRepository top;
@@ -30,17 +30,24 @@ public class AddTopicController {
 	
 	@ModelAttribute("topic")
 	public Topic createForm(){
+		System.out.println("topic");
 		return new Topic();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public String showForm(Map model){
-		Topic topic = new Topic();
-		model.put("topic", topic);
-		return "addtopic";		
+	@RequestMapping(method = RequestMethod.GET, value="index*")
+	public String showForm(){
+		return "/user/index";		
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.GET, value="addtopic*")
+	public String showForm(Map model){
+		System.out.println("Aqui");
+		Topic topic = top.findTopicByID((long) 1);
+		model.put("topic", topic);
+		return "/user/addtopic";		
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, value="addtopic*")
 	public String addtopic(@ModelAttribute("topic") Topic topic){		
 		Topic newTopic = new Topic();
 		newTopic.setTopicTitle(topic.getTopicTitle());
@@ -52,7 +59,7 @@ public class AddTopicController {
 		pro.setId(1);
 		newTopic.setProduct(pro);
 		top.addTopic(newTopic);
-		return "redirect:/user";
+		return "redirect:/";
 	}
 	
 }
