@@ -3,13 +3,6 @@
 <suite verbose="0" name="Failed suite [GSC by packages]">
   <test name="test.persistence(failed)" preserve-order="false">
     <classes>
-      <class name="test.persistence.PersonRepositoryTest">
-        <methods>
-          <include name="testFindPersonRepo"/>
-          <include name="testAddPersonRepo"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class>
       <class name="test.persistence.CompanyPersistenceTest">
         <methods>
           <include name="cleanConnections"/>
@@ -20,6 +13,13 @@
         <methods>
           <include name="cleanConnections"/>
           <include name="prepareStatement"/>
+        </methods>
+      </class>
+      <class name="test.persistence.PersonRepositoryTest">
+        <methods>
+          <include name="testFindPersonRepo"/>
+          <include name="testAddPersonRepo"/>
+          <include name="beforeTest"/>
         </methods>
       </class>
     </classes>

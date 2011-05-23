@@ -24,6 +24,12 @@ public class InternController {
 		Product prod = pRepo.findTProductByID((long) 1);
 		prod.getListOfTopics().size();
 		List<Topic> lista = prod.getListOfTopics();
-		return new ModelAndView("intern").addObject("topics",lista);
+		Topic topic = new Topic();
+		
+		ModelAndView model = new ModelAndView("intern");
+		model.addObject("topics",lista);
+		model.addObject("topic",topic);
+		
+		return model;
 	}
 }

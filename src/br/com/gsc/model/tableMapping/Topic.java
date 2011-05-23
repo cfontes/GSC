@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import br.com.gsc.model.tableMapping.TopicTypes;
 
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +30,10 @@ public class Topic {
 	private String			topicTitle;
 	@Column(length=500, nullable=false)
 	private String 			topicContent;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(length=30, nullable=false)
+	private TopicTypes topicType;
 	
 	@OneToMany(mappedBy="topic")
 	private List<Post> 		listOfPosts = new ArrayList<Post>();
@@ -85,6 +92,14 @@ public class Topic {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+
+	public TopicTypes getTopicType() {
+		return topicType;
+	}
+
+	public void setTopicType(TopicTypes topicType) {
+		this.topicType = topicType;
 	}
 	
 }
