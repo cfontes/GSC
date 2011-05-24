@@ -39,11 +39,17 @@ public class TopicController {
 		post.setPerson(topic.getPerson());
 		post.setTopic(topic);
 		model.addObject("post",post);
-		System.out.println("Teste");
 		return model;
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value="*addtopic")
+	@RequestMapping(value="/user/topic/{topicId}", method=RequestMethod.DELETE)
+	public String deleteTopic(@PathVariable("topicId") int id){
+		Topic topic = top.findTopicByID((long) id);
+		top.removeTopic(topic);
+		return "redirect:/";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/user/topic/addtopic")
 	public String showForm(Map model){
 		System.out.println("Aqui");
 		Topic topic = top.findTopicByID((long) 1);
@@ -51,7 +57,7 @@ public class TopicController {
 		return "/user/addtopic";		
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value="*addtopic")
+	@RequestMapping(method = RequestMethod.POST, value="/user/topic/addtopic")
 	public String addtopic(@ModelAttribute("topic") Topic topic){
 		System.out.println("adding");
 		Topic newTopic = new Topic();

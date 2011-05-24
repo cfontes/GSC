@@ -37,7 +37,7 @@ public abstract class AbsRepository<T> {
 		return repositoryImpl.read(t, pk);
 	}
 
-	protected List<T> findAll(String query, Object[] params) {
+	protected List<T> execQuery(String query, Object[] params) {
 		// TODO Auto-generated method stub
 		return null;
 	}

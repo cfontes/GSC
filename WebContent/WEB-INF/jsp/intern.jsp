@@ -61,33 +61,34 @@
 			<input id="Tab" name="TabSelected" type="hidden"/>
 			<tab:tabContainer id="principal-selector" jsTabListener="myListener">
 					<tab:tabPane id="question"  tabTitle="Pergunta" >
-						<form:input path="topicTitle" type="text" class="login_field" size="81"  />
+						<form:input path="topicTitle" type="text" class="login_field" size="82"  />
 						<form:textarea path="topicContent" type="text" class="login_field" cols="62" rows="3" />
 						<input name="topicType" type="hidden" value="QUESTION"/>
 					</tab:tabPane>
 					<tab:tabPane id="sugestion" tabTitle="Sugestão">
-						<form:input path="topicTitle" type="text" class="login_field" size="81"  />
+						<form:input path="topicTitle" type="text" class="login_field" size="82"  />
 						<form:textarea path="topicContent" type="text" class="login_field" cols="62" rows="3" />
 						<input name="topicType" type="hidden" value="IDEA"/>
 					</tab:tabPane>
 					<tab:tabPane id="complain"  tabTitle="Reclamação">
-						<form:input path="topicTitle" type="text" class="login_field" size="81"  />
+						<form:input path="topicTitle" type="text" class="login_field" size="82"  />
 						<form:textarea path="topicContent" type="text" class="login_field" cols="62" rows="3" />
 						<input name="topicType" type="hidden" value="PROBLEM"/>
 					</tab:tabPane>
 					<tab:tabPane id="opnion"    tabTitle="Opnião">
-						<form:input path="topicTitle" type="text" class="login_field" size="81"  />
+						<form:input path="topicTitle" type="text" class="login_field" size="82"  />
 						<form:textarea path="topicContent" type="text" class="login_field" cols="62" rows="3" />
 						<input name="topicType" type="hidden" value="PRAISE"/>
 					</tab:tabPane>
-<!-- 				<a class="button" href="/GSC/user/addtopic.html" onclick="this.blur();" method="post" ><span> Postar </span></a> -->
-					<input type="submit" class="button" value="Postar" align="right"/>
+<!-- 				<a class="button" href="/GSC/user/addtopic.html" onclick="this.blur();" ><span> Postar </span></a> -->
+					<input type="submit" class="button" value="Postar" float="right"/>
 				<br>
 			</tab:tabContainer>
 		</form:form>
 			<br>
 			<c:forEach items="${topics}" var="topic">
 				<br>
+				<img src="/GSC/img/img_perfil.jpg" alt="Angry face" />
 				<h4 class="title"><a href="<c:url value="/user/topic/${topic.id}.html"/>">${topic.topicTitle}</a></h4>
 				<h5 class="sub-title"><c:out value="${topic.topicContent}"/></h5>
 				<c:out value="${topic.person.username}"></c:out>				

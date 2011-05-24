@@ -38,41 +38,23 @@
 				<h2><c:out value="${topic.topicTitle}"/></h4>
 				<h3 class="sub-title"><c:out value="${topic.topicContent}"/></h5>			
 				<a href="<c:url value="/user/${topic.person.username}.html"/>">${topic.person.username}</a>
+				<form:form method="delete">
+					<input type="submit" class="button" value="Delete" />
+				</form:form>
 				<br>
 				<br>
-				<form:form action="/GSC/user/addpost.html" modelAttribute="post" method="post">
-						<input id="Tab" name="TabSelected" type="hidden"/>
-						<tab:tabContainer id="principal-selector">
-								<tab:tabPane id="question"  tabTitle="Pergunta" >
-									<form:input path="postTitle" type="text" class="login_field" size="81"  />
-									<form:textarea path="content" type="text" class="login_field" cols="62" rows="3" />
-									<input name="topicType" type="hidden" value="QUESTION"/>
-								</tab:tabPane>
-								<tab:tabPane id="sugestion" tabTitle="Sugestão">
-									<form:input path="postTitle" type="text" class="login_field" size="81"  />
-									<form:textarea path="content" type="text" class="login_field" cols="62" rows="3" />
-									<input name="topicType" type="hidden" value="IDEA"/>
-								</tab:tabPane>
-								<tab:tabPane id="complain"  tabTitle="Reclamação">
-									<form:input path="postTitle" type="text" class="login_field" size="81"  />
-									<form:textarea path="content" type="text" class="login_field" cols="62" rows="3" />
-									<input name="topicType" type="hidden" value="PROBLEM"/>
-								</tab:tabPane>
-								<tab:tabPane id="opnion"    tabTitle="Opnião">
-									<form:input path="postTitle" type="text" class="login_field" size="81"  />
-									<form:textarea path="content" type="text" class="login_field" cols="62" rows="3" />
-									<input name="topicType" type="hidden" value="PRAISE"/>
-								</tab:tabPane>
-			<!-- 				<a class="button" href="/GSC/user/addtopic.html" onclick="this.blur();" method="post" ><span> Postar </span></a> -->
-								<input type="submit" class="button" value="Postar" align="right"/>
-							<br>
-						</tab:tabContainer>
-					</form:form>
 				<h3>Posts</h3>
 				<c:forEach items="${topic.listOfPosts}" var="post">
-					<h4>$post.postTitle</h4>
-					<h5>$post.content</h5>
+					<h4>${post.postTitle}</h4>
+					<h5>${post.content}</h5>
 				</c:forEach>
+				<br>
+<%-- 				<c:out value="/user/topic/${topic.id}/post/addpost.html"/> --%>
+				<form:form action="/user/topic/${topic.id}/post/addpost.html" modelAttribute="post" method="post">
+					<form:input path="postTitle" type="text" class="login_field" size="82"  />
+					<form:textarea path="content" type="text" class="login_field" cols="62" rows="3" />
+					<input type="submit" class="button" value="Postar" float="right"/>
+				</form:form>				
 			</div>
 		</div>
 </body>

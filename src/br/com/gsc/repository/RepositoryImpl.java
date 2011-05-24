@@ -62,7 +62,7 @@ public class RepositoryImpl {
 		return response;
 	}
 
-	public <T> List<T> findAll(T t, String queryName, String... param) {
+	public <T> List<T> execQuery(T t, String queryName, String... param) {
 		Query query = this.em.createNamedQuery(queryName);
 		for(int i=0; i<param.length; i++){
 			query.setParameter(i, param[i]);
