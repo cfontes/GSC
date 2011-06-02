@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -36,11 +37,11 @@ public class Person {
 	 private String 		phone;
 	 private String 		password;
 	 private String			authority;
-	 @OneToMany(mappedBy="person")
+	 @OneToMany(mappedBy="person",cascade=CascadeType.ALL)
 	 private List<Topic> 	listOfTopics;
-	 @OneToMany(mappedBy="person")
+	 @OneToMany(mappedBy="person",cascade=CascadeType.ALL)
 	 private List<Post> 	listOfPosts;
-	 @OneToMany(mappedBy="person")
+	 @OneToMany(mappedBy="person",cascade=CascadeType.ALL)
 	 private List<Comment> 	listOfComments;
 	
 	

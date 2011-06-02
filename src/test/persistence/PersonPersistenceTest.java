@@ -1,8 +1,11 @@
 package test.persistence;
 
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
 
+import org.testng.annotations.Test;
+
+import br.com.gsc.model.tableMapping.Admin;
 import br.com.gsc.model.tableMapping.Operator;
 import br.com.gsc.model.tableMapping.User;
 
@@ -13,7 +16,7 @@ public class PersonPersistenceTest extends PersistenceTest {
 	public void testUserPersistence(){
 		 tx.begin();
 		 User user = new User();
-		 user.setUsername("mickey");
+		 user.setUsername("user");
 		 em.persist(user);
 		 tx.commit();
 		 
@@ -24,14 +27,14 @@ public class PersonPersistenceTest extends PersistenceTest {
 		 String username = user.getUsername();
 		 User userFromDatabase = em.find(User.class, username);
 		 assertNotNull(userFromDatabase);
-		 assertEquals("mickey", userFromDatabase.getUsername());	
+		 assertEquals("user", userFromDatabase.getUsername());	
 	}
 	
 	@Test
-	public void testOperatorPersistence(){
+	public void testAdminPersistence(){
 		 tx.begin();
-		 Operator user = new Operator();
-		 user.setUsername("roger");
+		 Admin user = new Admin();
+		 user.setUsername("admin");
 		 em.persist(user);
 		 tx.commit();
 		 
@@ -40,8 +43,8 @@ public class PersonPersistenceTest extends PersistenceTest {
 		 
 		 // lookup entity
 		 String username = user.getUsername();
-		 Operator userFromDatabase = em.find(Operator.class, username);
+		 Admin userFromDatabase = em.find(Admin.class, username);
 		 assertNotNull(userFromDatabase);
-		 assertEquals("roger", userFromDatabase.getUsername());	
+		 assertEquals("admin", userFromDatabase.getUsername());	
 	}
 }

@@ -17,7 +17,7 @@ import br.com.gsc.repository.objRepos.PostRepository;
 import br.com.gsc.repository.objRepos.TopicRepository;
 
 @Controller
-@RequestMapping("**/post/**")
+@RequestMapping("/**/post/**")
 public class PostController {
 	
 	@Autowired
@@ -34,12 +34,19 @@ public class PostController {
 	}
 	
 	@RequestMapping(value = "/user/topic/{topicId}/post/addpost", method=RequestMethod.POST)
-	public String addpost(@PathVariable(value="topicId") long id, @ModelAttribute("post") Post post){
+	public String addPost(@PathVariable(value="topicId") long id, @ModelAttribute("post") Post post){
+		System.out.println("10.................................................................");
 		Person person = personRepo.findPersonByID(SecurityContextHolder.getContext().getAuthentication().getName());
 		post.setPerson(person);
 		Topic topic = topicRepo.findTopicByID(id);
 		post.setTopic(topic);
 		postRepo.addPost(post);
+		return "redirect:/user/topic/"+id+".html";
+	}
+	
+	@RequestMapping(value = "/user/topic/{topicId}/post/{postId}", method=RequestMethod.DELETE)
+	public String deletePost(@PathVariable(value="topicId") long id, @PathVariable(value="postId") long postId){
+		postRepo.removePost(postRepo.findTPostByID(postId));
 		return "redirect:/user/topic/"+id+".html";
 	}
 

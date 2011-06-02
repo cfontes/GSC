@@ -2,6 +2,7 @@ package br.com.gsc.model.tableMapping;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +23,7 @@ public class Company {
 	long id;
 	String name;
 	String adress;
-	@OneToMany(mappedBy="company")
+	@OneToMany(mappedBy="company",cascade=CascadeType.ALL)
 	List<Product> listOfProducts;
 
 	public long getId() {

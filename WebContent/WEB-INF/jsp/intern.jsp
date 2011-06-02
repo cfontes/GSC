@@ -4,50 +4,49 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="tab" uri="http://ditchnet.org/jsp-tabs-taglib"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>.:HOME:.</title>
-	<LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css" MEDIA=screen>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<SCRIPT>
-			function myListener(evt) {
-		    // a tab was clicked, and made visible. take action here
-			
-		    var selectedTabPane = evt.getTabPane(); // HTMLDivElement reference to 
-		                                            // the div containing the tab pane.
-		
-		    var selectedTab     = evt.getTab();     // HTMLDivElement reference to 
-		                                            // the div that is the actual tab
-		                                            // at the top of the container with
-		                                            // the tab title.
-		    if(selectedTab == "Pergunta"){
-		    	document.getElementById("Tab").setAttribute("TabSelected", P);
-		    }
-		
-		    var tabContainer    = evt.getTabContainer(); // HTMLDivElement reference to 
-		                                                 // the div wrapping the entire	
-		                                                 // tab container.
-			 doSomethingInteresting(selectedTabPane,selectedTab,tabContainer);
-		}
-	</SCRIPT>
-	<tab:tabConfig/>
+	<LINK REL=StyleSheet HREF="<c:url value="/css/style1.css"/>" TYPE="text/css" MEDIA=screen>
+	<LINK REL=StyleSheet HREF="<c:url value="/css/login.css"/>" TYPE="text/css" MEDIA=screen>
+	<script type="text/javascript" src="<c:url value="/js/jquery.js"/>"></script>
+	<script type="text/javascript" src="<c:url value="/js/jquery.simplemodal.js"/>"></script>
+	<script type="text/javascript" src="<c:url value="/js/login.js"/>"></script>
+	<script>
+	  function seta_type(obj){
+		document.getElementById('topicType').value = obj;		
+	  }
+	</script>
 </head>
 <body>
 	<div id="bar_top">
+		<div class="login">
+			<ul>
+				<li><a href="#" class="login_form">Login</a></li>
+				<li>Ainda não é cadastrado? <a href="#" class="cadastre_form">Clique aqui</a></li>				
+			</ul>
+		</div>
+		<div class="quick-search">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td><input class="criteria_qs_text" value="Pesquisa rapida" type="text" name="criteria_qs" id="criteria_qs" /></td>
+					<td><input class="criteria_qs_btn teste" type="submit" value="" class="btn_q_search" /></td>
+				</tr>
+			</table>
+		</div>
 		<div id="bar_top_content">
 			<div id="title-site">
-				<h2>GSC<br/><span>Page</span></h2>
+				<h2></h2>
 			</div>
 			<div id="menu">
 				<div class="menu_left"></div>
 				<div class="menu_middle">
 					<ul>						
+						<li><a href="<c:url value="/intern.html"/>">Home</a></li>
 						<li><a href="<c:url value="/user/index.html"/>">Login</a></li>
-						<li><a href="<c:url value="cadastro.html"/>">Cadastro</a></li>
-						<li><a href="<c:url value="/user/topic/addtopic.html"/>">Add Topic</a></li>
+						<li><a href="<c:url value="/cadastro.html"/>">Cadastro</a></li>
 						<li><a href="<c:url value="/admin/index.html"/>">Área adminstrativa</a></li>
 					</ul>
 				</div>
@@ -57,42 +56,47 @@
 	</div>
 	<div id="wrapper">
 		<div id="col-left">
-		<form:form action="/GSC/user/topic/addtopic.html" modelAttribute="topic" method="post">
-			<input id="Tab" name="TabSelected" type="hidden"/>
-			<tab:tabContainer id="principal-selector" jsTabListener="myListener">
-					<tab:tabPane id="question"  tabTitle="Pergunta" >
-						<form:input path="topicTitle" type="text" class="login_field" size="82"  />
-						<form:textarea path="topicContent" type="text" class="login_field" cols="62" rows="3" />
-						<input name="topicType" type="hidden" value="QUESTION"/>
-					</tab:tabPane>
-					<tab:tabPane id="sugestion" tabTitle="Sugestão">
-						<form:input path="topicTitle" type="text" class="login_field" size="82"  />
-						<form:textarea path="topicContent" type="text" class="login_field" cols="62" rows="3" />
-						<input name="topicType" type="hidden" value="IDEA"/>
-					</tab:tabPane>
-					<tab:tabPane id="complain"  tabTitle="Reclamação">
-						<form:input path="topicTitle" type="text" class="login_field" size="82"  />
-						<form:textarea path="topicContent" type="text" class="login_field" cols="62" rows="3" />
-						<input name="topicType" type="hidden" value="PROBLEM"/>
-					</tab:tabPane>
-					<tab:tabPane id="opnion"    tabTitle="Opnião">
-						<form:input path="topicTitle" type="text" class="login_field" size="82"  />
-						<form:textarea path="topicContent" type="text" class="login_field" cols="62" rows="3" />
-						<input name="topicType" type="hidden" value="PRAISE"/>
-					</tab:tabPane>
-<!-- 				<a class="button" href="/GSC/user/addtopic.html" onclick="this.blur();" ><span> Postar </span></a> -->
-					<input type="submit" class="button" value="Postar" float="right"/>
-				<br>
-			</tab:tabContainer>
+		<c:url value="/user/topic/addtopic.html" var="linkPost"/>
+		<form:form action="${linkPost}" modelAttribute="topic" method="post">
+			<div class="area_post_form">
+				<div class="option">
+					<ul>
+						<li><a href="#" onclick="seta_type('QUESTION')">Perguntas</a></li>
+						<li><a href="#" onclick="seta_type('IDEA')">Sugestões</a></li>
+						<li><a href="#" onclick="seta_type('PROBLEM')">Reclamações</a></li>
+						<li><a href="#" onclick="seta_type('PRAISE')">Opniões</a></li>
+					</ul>
+				</div>
+				<input name="topicType" type="hidden" id="topicType" value="QUESTION"/>
+				<H4 class="sub-title">Titulo :</H4>
+					<form:errors path="topicTitle" type="text" class="title_post"/> 
+					<form:input path="topicTitle" type="text" class="title_post" name="title_post" id="title_post" />
+				<H4 class="sub-title">Conteudo :</H4>
+					<form:errors path="topicContent" type="text" class="cont_post"/> 
+					<form:textarea path="topicContent" class="cont_post" name="content_post" id="content_post"/>
+				<input type="submit" class="btn_post" value="" />
+			</div>
 		</form:form>
-			<br>
-			<c:forEach items="${topics}" var="topic">
-				<br>
-				<img src="/GSC/img/img_perfil.jpg" alt="Angry face" />
-				<h4 class="title"><a href="<c:url value="/user/topic/${topic.id}.html"/>">${topic.topicTitle}</a></h4>
-				<h5 class="sub-title"><c:out value="${topic.topicContent}"/></h5>
-				<c:out value="${topic.person.username}"></c:out>				
-			</c:forEach>
+			<ul class="list_posts">
+				<c:forEach items="${topics}" var="topic">
+					<li>
+						<c:url value="/img/img_perfil.jpg" var="imgPath"/>
+						<div class="list_thumb"><img class="profile_pic" src="${imgPath}" border="0" alt="img"/></div>
+						<div class="list_cont">
+							<ul>
+								<li class="list_title_post">
+									<h4 class="title"><a href="<c:url value="/user/topic/${topic.id}.html"/>">${topic.topicTitle}</a></h4>									
+								</li>
+								<li><p><h5 class="sub-title"><c:out value="${topic.topicContent}"/></h5></p></li>
+								<li><c:out value="${topic.person.username}"/></li>
+							</ul>
+						</div>
+					</li>
+				</c:forEach>																								
+			</ul>
+		</div>
+		<div id="col-right">
+			<img class="middle" src="${imgPath}" border="0" alt="img"/>
 		</div>
 	</div>
 </body>

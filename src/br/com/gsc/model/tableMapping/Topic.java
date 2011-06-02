@@ -1,8 +1,12 @@
 package br.com.gsc.model.tableMapping;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -14,9 +18,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import br.com.gsc.model.tableMapping.TopicTypes;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.sun.istack.internal.NotNull;
 
 @Entity
 @Table(name="tb_topics")
@@ -26,16 +34,23 @@ public class Topic {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long 			id;
+	
+	@NotEmpty(message = "O Titulo é obrigatorio")
 	@Column(length=150, nullable=false)
 	private String			topicTitle;
+	
+	@NotEmpty(message = "O conteudo é obrigatorio")
 	@Column(length=500, nullable=false)
 	private String 			topicContent;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date 			createdIn;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(length=30, nullable=false)
 	private TopicTypes topicType;
 	
-	@OneToMany(mappedBy="topic")
+	@OneToMany(mappedBy="topic",cascade=CascadeType.ALL)
 	private List<Post> 		listOfPosts = new ArrayList<Post>();
 	
 	@ManyToOne
@@ -100,6 +115,14 @@ public class Topic {
 
 	public void setTopicType(TopicTypes topicType) {
 		this.topicType = topicType;
+	}
+
+	public Date getCreatedInDate() {
+		return createdIn;
+	}
+
+	public void setCreatedInDate(Date createdInDate) {
+		this.createdIn = createdInDate;
 	}
 	
 }

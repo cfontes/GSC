@@ -13,7 +13,7 @@ import br.com.gsc.model.tableMapping.Topic;
 import br.com.gsc.repository.objRepos.ProductRepository;
 
 @Controller
-@RequestMapping("/intern.html")
+@RequestMapping("/intern.**")
 public class InternController {
 
 	@Autowired
@@ -25,11 +25,21 @@ public class InternController {
 		prod.getListOfTopics().size();
 		List<Topic> lista = prod.getListOfTopics();
 		Topic topic = new Topic();
-		
 		ModelAndView model = new ModelAndView("intern");
 		model.addObject("topics",lista);
 		model.addObject("topic",topic);
-		
+		return model;
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public ModelAndView showPagePost(){
+		Product prod = pRepo.findTProductByID((long) 1);
+		prod.getListOfTopics().size();
+		List<Topic> lista = prod.getListOfTopics();
+		Topic topic = new Topic();
+		ModelAndView model = new ModelAndView("intern");
+		model.addObject("topics",lista);
+		model.addObject("topic",topic);
 		return model;
 	}
 }

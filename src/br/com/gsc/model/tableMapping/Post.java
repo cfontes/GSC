@@ -3,6 +3,7 @@ package br.com.gsc.model.tableMapping;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +35,7 @@ public class Post {
 	@Column(length=150, nullable=false)
 	private String 			postTitle;
 	
-	@OneToMany(mappedBy="post")
+	@OneToMany(mappedBy="post",cascade=CascadeType.ALL)
 	private List<Comment> 	listOfComments = new ArrayList<Comment>();
 	
 	@ManyToOne
