@@ -1,5 +1,7 @@
 package br.com.gsc.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -17,7 +19,7 @@ import br.com.gsc.repository.objRepos.PostRepository;
 import br.com.gsc.repository.objRepos.TopicRepository;
 
 @Controller
-@RequestMapping("/**/post/**")
+@RequestMapping("**/post/**")
 public class PostController {
 	
 	@Autowired
@@ -27,27 +29,28 @@ public class PostController {
 	@Autowired
 	TopicRepository topicRepo;
 	
-	@RequestMapping(value = "/user/post/{postId}", method=RequestMethod.GET)
+	@RequestMapping(value = "**/post/{postId}", method=RequestMethod.GET)
 	public ModelAndView showPosts(@PathVariable("postId") long id){
 		ModelAndView model = new ModelAndView("/user/post");
 		return null;
 	}
 	
-	@RequestMapping(value = "/user/topic/{topicId}/post/addpost", method=RequestMethod.POST)
+	@RequestMapping(value = "/topic/{topicId}/post/addpost", method=RequestMethod.POST)
 	public String addPost(@PathVariable(value="topicId") long id, @ModelAttribute("post") Post post){
 		System.out.println("10.................................................................");
 		Person person = personRepo.findPersonByID(SecurityContextHolder.getContext().getAuthentication().getName());
 		post.setPerson(person);
 		Topic topic = topicRepo.findTopicByID(id);
 		post.setTopic(topic);
+		post.setCreatedIn(new Date());
 		postRepo.addPost(post);
-		return "redirect:/user/topic/"+id+".html";
+		return "redirect:/topic/"+id+".html";
 	}
 	
-	@RequestMapping(value = "/user/topic/{topicId}/post/{postId}", method=RequestMethod.DELETE)
+	@RequestMapping(value = "/topic/{topicId}/post/{postId}", method=RequestMethod.DELETE)
 	public String deletePost(@PathVariable(value="topicId") long id, @PathVariable(value="postId") long postId){
 		postRepo.removePost(postRepo.findTPostByID(postId));
-		return "redirect:/user/topic/"+id+".html";
+		return "redirect:/topic/"+id+".html";
 	}
 
 }

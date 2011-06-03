@@ -117,11 +117,11 @@ public class Topic {
 		this.topicType = topicType;
 	}
 
-	public Date getCreatedInDate() {
+	public Date getCreatedIn() {
 		return createdIn;
 	}
 
-	public void setCreatedInDate(Date createdInDate) {
+	public void setCreatedIn(Date createdInDate) {
 		this.createdIn = createdInDate;
 	}
 	

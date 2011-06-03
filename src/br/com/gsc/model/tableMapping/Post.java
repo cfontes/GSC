@@ -1,6 +1,7 @@
 package br.com.gsc.model.tableMapping;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,7 +44,10 @@ public class Post {
 	@ManyToOne
 	@JoinColumn(name="person_id", nullable=false)
 	private Person 			person;
-
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date 			createdIn;
+	
 	public String getPostTitle() {
 		return postTitle;
 	}
@@ -92,6 +98,14 @@ public class Post {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+
+	public void setCreatedIn(Date createdIn) {
+		this.createdIn = createdIn;
+	}
+
+	public Date getCreatedIn() {
+		return createdIn;
 	}
 	
 }

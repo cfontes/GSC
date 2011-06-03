@@ -12,7 +12,7 @@ public class AdminController {
 	
 	@RequestMapping(method = RequestMethod.GET, value="/index.*")
 	public ModelAndView showAdminPage(){
-		ModelAndView model = new ModelAndView("/admin/index");
+		ModelAndView model = new ModelAndView("redirect:/");
 		String user = SecurityContextHolder.getContext().getAuthentication().getName();
 		model.addObject("user",user);
 		return model;

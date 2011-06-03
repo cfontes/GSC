@@ -24,7 +24,7 @@ import br.com.gsc.repository.objRepos.ProductRepository;
 import br.com.gsc.repository.objRepos.TopicRepository;
 
 @Controller
-@RequestMapping("/user/topic/**")
+@RequestMapping("/topic/**")
 public class TopicController {
 
 	@Autowired
@@ -39,26 +39,27 @@ public class TopicController {
 	TopicControllerHelper topHelper;
 	
 	
-	@RequestMapping(value="/user/topic/{topicId}", method=RequestMethod.GET)
+	@RequestMapping(value="/topic/{topicId}", method=RequestMethod.GET)
 	public ModelAndView showPage(@PathVariable("topicId") int id){
-		ModelAndView model = new ModelAndView("/user/topic");
+		ModelAndView model = new ModelAndView("/topic");
 		Topic topic = top.findTopicByID((long) id);
 		model.addObject("topic",topic);	
 		Post post = new Post();
 		post.setPerson(topic.getPerson());
 		post.setTopic(topic);
 		model.addObject("post",post);
+		model.addObject("logged",SecurityContextHolder.getContext().getAuthentication().getName());
 		return model;
 	}
 	
-	@RequestMapping(value="/user/topic/{topicId}", method=RequestMethod.PUT)
+	@RequestMapping(value="/topic/{topicId}", method=RequestMethod.PUT)
 	public String editTopic(@PathVariable("topicId") int id){
 		Topic topic = top.findTopicByID((long) id);
 		//TODO
-		return "redirect:/user/topic/"+id+".html";
+		return "redirect:/topic/"+id+".html";
 	}
 	
-	@RequestMapping(value="/user/topic/{topicId}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/topic/{topicId}", method=RequestMethod.DELETE)
 	public String deleteTopic(@PathVariable("topicId") int id){
 		Topic topic = top.findTopicByID((long) id);
 		top.removeTopic(topic);
@@ -73,26 +74,30 @@ public class TopicController {
 //		return "/user/addtopic";		
 //	}
 	
-	@RequestMapping(method = RequestMethod.POST, value="/user/topic/addtopic")
+	@RequestMapping(method = RequestMethod.POST, value="/topic/addtopic")
 	public ModelAndView addtopic(@ModelAttribute("topic") @Valid Topic topic, BindingResult result){
 		
-		if(result.hasErrors()){
-			
+		if(result.hasErrors()){			
 			return topHelper.initInternPage();
 		}
-		Topic newTopic = new Topic();
-		newTopic.setTopicTitle(topic.getTopicTitle());
-		newTopic.setTopicContent(topic.getTopicContent());
-		newTopic.setTopicType(topic.getTopicType());
-		newTopic.setCreatedInDate(new Date());
-		Person p = per.findPersonByID(SecurityContextHolder.getContext().getAuthentication().getName());
-		newTopic.setPerson(p);
-		Product pro = new Product();
-		pro.setName("teste");
-		pro.setId(1);
-		newTopic.setProduct(pro);
-		top.addTopic(newTopic);
-		return new ModelAndView("redirect:/");
+		
+		if(SecurityContextHolder.getContext().getAuthentication().isAuthenticated()){
+			Topic newTopic = new Topic();
+			newTopic.setTopicTitle(topic.getTopicTitle());
+			newTopic.setTopicContent(topic.getTopicContent());
+			newTopic.setTopicType(topic.getTopicType());
+			newTopic.setCreatedIn(new Date());
+			Person p = per.findPersonByID(SecurityContextHolder.getContext().getAuthentication().getName());
+			newTopic.setPerson(p);
+			Product pro = new Product();
+			pro.setName("teste");
+			pro.setId(1);
+			newTopic.setProduct(pro);
+			top.addTopic(newTopic);
+			return new ModelAndView("redirect:/");
+		}else{
+			return new ModelAndView("forward:/user/index.html");
+		}
 	}
 
 }

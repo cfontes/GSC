@@ -19,7 +19,7 @@ public class UserController {
 	
 	@RequestMapping(method = RequestMethod.GET, value="index")
 	public String showForm(){
-		return "/user/index";		
+		return "redirect:/";		
 	}
 	
 }
