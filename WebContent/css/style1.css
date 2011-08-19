@@ -15,9 +15,9 @@ p{color: #7b5a47; font-size: 12px; line-height: 18px}
 /**
  * Menu
  **/
-#menu{float: right; width: 600px; height: 51px; margin-top: 30px}
+#menu{float: right; width: 560px; height: 51px; margin-top: 30px}
 .menu_left{background: url(../img/menu_side_left.jpg) no-repeat; width: 7px; height: 51px; float: left}
-.menu_middle{background: url(../img/menu_middle.jpg) repeat-x; width: 584px; height: 51px; float: left;}
+.menu_middle{background: url(../img/menu_middle.jpg) repeat-x; width: 548px; margin-left: -2px; height: 51px; float: left;}
 .menu_right{background: url(../img/menu_side_right.jpg) no-repeat; width: 7px; height: 51px; float: left}
 #menu ul{margin: 13px 0 0 0; padding: 0; width: 100%; text-align:center;}
 #menu ul li{padding: 0 30px}
@@ -112,9 +112,32 @@ p{color: #7b5a47; font-size: 12px; line-height: 18px}
 .cont_post{width: 500px; height: 90px; border: 1px 2px 2px 1px; border-color: #b3afa5; border-style: solid; padding: 5px}
 .list_posts{margin: 0; padding: 0}
 .list_posts li{width: 100%; float: left; margin-bottom: 20px}
+.list_posts tr{float: left; margim-bottom:20px}
+.list_posts a{margin: 0px 0px 0px 5px;}
+.list_posts h4{margin: 0px 0px 0px -10px; important!}
+.list_posts h5{ margin: 0px 0px 0px -5px; important!}
+.list_posts td{width: 100%; float: left; margin-bottom: 20px}
 .list_thumb{float: left; margin-right: 10px; width: 102px}
 .list_cont{width: 400px; float: right}
 .list_cont ul{margin: 0; padding: 0}
 .btn_post{background: url('../img/bt-enviar.png'); width: 119px; height: 34px; border: 0; float: right; margin: 10px 20px 0 0; cursor: pointer}
 .btn_delete{background: url('../img/delete_post.png'); width: 20px; height: 20px; border: 0; float: right; margin: 0 5px 0 0; cursor: pointer}
 .btn_edit{background: url('../img/edit_post.png'); width: 20px; height: 20px; border: 0; float: right; margin: 0 5px 0 0; cursor: pointer}
+
+/**
+* Topic
+*/
+#topics
+.topics{margin: 10px; padding: 0}
+.topics ul{margin: 0; padding: 0}
+.topics li{width: 100%; float: left; margin-bottom: 50px; margin-left: -10px}
+.topic_thumb{float: left; margin-right: 10px; width: 102px;}
+.topic {padding-bottom: 25px; border-bottom: 1px solid #999}
+.topic .tr{float: left; margim-bottom:20px}
+.topic .icons_actions{margin-left: 455px !important; margin-top: 0 !important; *margin:5px 0 0 285px !important}
+.topic .icons_actions li{display: inline !important;}
+.topic .p{margin-top: 20px;margin-left: 120px}
+.topic .title{margin: 0 20px 0 120px !important}
+.topic .sub-title{ margin-left: 120px !important; margin-top: 20px !important;}
+.topic .img-user{margin-left: 120px}
+.topic .criadoem{font-size: 10px; margin-top: 5px ;margin-bottom:5px }

@@ -14,21 +14,23 @@
 <body>
 	<div id="bar_top">
 		<div class="login">
+		<sec:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN,ROLE_OPER">
 				<ul>
 					<li><a href="<c:url value="/user/index.html"/>">Login</a></li>
 					<li>Ainda não é cadastrado? <a href="<c:url value="/cadastro.html"/>" class="cadastre_form">Clique aqui</a></li>				
 				</ul>
+		</sec:authorize>
+		<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
+				<ul>						
+					<li><a href="<c:url value="/j_spring_security_logout"/>">Logout</a></li>						
+				</ul>
+		</sec:authorize>
 			</div>
 			<div class="quick-search">
 				<table cellpadding="0" cellspacing="0">
 					<tr>
 						<td><input class="criteria_qs_text" value="Pesquisa rapida" type="text" name="criteria_qs" id="criteria_qs" /></td>
 						<td><input class="criteria_qs_btn teste" type="submit" value="" class="btn_q_search" /></td>
-					</tr>
-					<tr>
-						<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
-							<td><a href="<c:url value="/j_spring_security_logout"/>" class="logout">Logout</a></td>
-						</sec:authorize>
 					</tr>
 				</table>
 			</div>
@@ -41,8 +43,8 @@
 				<div class="menu_middle">
 					<ul>						
 						<li><a href="<c:url value="/intern.html"/>">Home</a></li>
-						<li><a href="<c:url value="/user/index.html"/>">Login</a></li>
-						<li><a href="<c:url value="/cadastro.html"/>">Cadastro</a></li>
+						<li><a href="<c:url value="#"/>">Empresa</a></li>
+						<li><a href="<c:url value="#"/>">Produto</a></li>
 						<li><a href="<c:url value="/admin/index.html"/>">Área adminstrativa</a></li>
 					</ul>
 				</div>
@@ -67,7 +69,7 @@
 									<li class="sub-title">${post.postTitle}
 										<ul class="icons_actions">
 <!-- 									<li><a href="#"><img src="/GSC/img/edit_post.png" border="0" /></a></li> -->
-											<sec:authorize url="/admin/**">
+											<sec:authorize access="hasAnyRole('ROLE_ADMIN')">
 												<c:set value="true" var="admin"/>
 											</sec:authorize>
 											<c:if test="${post.person.username == logged || admin==true}">
@@ -107,7 +109,6 @@
 			</div>			
 		</div>
 		<div id="col-right">
-			<h3 class="title">fafafa</h3>
 		</div>
 	</div>
 </body>

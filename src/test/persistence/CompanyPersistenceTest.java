@@ -3,6 +3,7 @@ package test.persistence;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import br.com.gsc.model.tableMapping.Company;
@@ -10,12 +11,21 @@ import br.com.gsc.model.tableMapping.Product;
 
 public class CompanyPersistenceTest extends PersistenceTest{
 		
+		Company comp;
+		Product prod;
+	
+		@BeforeTest
+		public void setTestVars(){
+			 comp = new Company();
+			 comp.setName("comp");
+			 prod= new Product();
+			 prod.setName("car");
+			 prod.setCompany(comp);
+		}
 		
 		@Test
 		public void testCompanyPersistence(){
 			 tx.begin();
-			 Company comp = new Company();
-			 comp.setName("comp");
 			 em.persist(comp);
 			 tx.commit();
 			 
@@ -32,8 +42,6 @@ public class CompanyPersistenceTest extends PersistenceTest{
 		@Test
 		public void testProductPersistence(){
 			 tx.begin();
-			 Product prod = new Product();
-			 prod.setName("car");
 			 em.persist(prod);
 			 tx.commit();
 			 

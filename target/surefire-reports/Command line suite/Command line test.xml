@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="cristiano-PC" name="test.persistence.PersonRepositoryTest" tests="6" failures="1" timestamp="19 Aug 2011 20:42:04 GMT" time="2.572" errors="0">
+  <testcase name="testAddPersonRepo" time="0.0020" classname="test.persistence.PersonRepositoryTest">
+    <failure type="java.lang.NullPointerException">
+      <![CDATA[java.lang.NullPointerException
+	at test.persistence.PersonRepositoryTest.testAddPersonRepo(PersonRepositoryTest.java:30)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:62)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:141)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:177)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:345)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1009)
+... Removed 26 stack frames]]>
+    </failure>
+  </testcase>
+  <testcase name="testFindPersonRepo" time="0.0" classname="test.persistence.PersonRepositoryTest">
+    <skipped/>
+  </testcase>
+  <testcase name="testCompanyPersistence" time="0.08" classname="test.persistence.CompanyPersistenceTest"/>
+  <testcase name="testProductPersistence" time="0.0060" classname="test.persistence.CompanyPersistenceTest"/>
+  <testcase name="testAdminPersistence" time="0.012" classname="test.persistence.PersonPersistenceTest"/>
+  <testcase name="testUserPersistence" time="0.0050" classname="test.persistence.PersonPersistenceTest"/>
+</testsuite>

@@ -3,12 +3,11 @@ package br.com.gsc.repository;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.FetchType;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +21,8 @@ import org.springframework.transaction.annotation.Transactional;
  * @author cristiano
  *
  */
+
+@Configurable
 @Repository("RepositoryImpl")
 @Transactional
 public class RepositoryImpl {

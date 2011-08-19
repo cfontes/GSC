@@ -8,6 +8,7 @@ import br.com.gsc.model.tableMapping.Person;
 import br.com.gsc.repository.AbsRepository;
 import br.com.gsc.repository.objInterfaces.IPersonRepository;
 
+
 @Repository("PersonRepository")
 public class PersonRepository extends AbsRepository<Person> implements IPersonRepository{
 

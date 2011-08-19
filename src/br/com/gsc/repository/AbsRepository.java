@@ -3,7 +3,8 @@ package br.com.gsc.repository;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Repository;
 
 /**
  * Class that call the right persistence provider to handle the request.

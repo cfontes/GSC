@@ -3,10 +3,10 @@ package test.persistence;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
+import org.springframework.beans.factory.annotation.Configurable;
 import org.testng.annotations.Test;
 
 import br.com.gsc.model.tableMapping.Admin;
-import br.com.gsc.model.tableMapping.Operator;
 import br.com.gsc.model.tableMapping.User;
 
 public class PersonPersistenceTest extends PersistenceTest {

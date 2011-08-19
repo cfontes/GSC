@@ -17,9 +17,9 @@ jQuery(function ($) {
 		init: function () {
 			$('.login_form').click(function (e) {
 				e.preventDefault();
-
+				alert('throw');
 				// load the contact form using ajax
-				$.get("login.html", function(data){
+				$.get("../login.html", function(data){
 					// create a modal dialog with the data
 					$(data).modal({
 						closeHTML: "<a href='#' title='Close' class='modal-close'>x</a>",

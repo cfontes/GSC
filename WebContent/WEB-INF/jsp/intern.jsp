@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,23 +25,23 @@
 <body>
 	<div id="bar_top">
 		<div class="login">
-			<ul>
-				<sec:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN,ROLE_OPER">
-					<li><a href="<c:url value="/user/index.html"/>">Login</a></li>
-				</sec:authorize>
-				<li>Ainda não é cadastrado? <a href="<c:url value="/cadastro.html"/>" class="cadastre_form">Clique aqui</a></li>				
-			</ul>
+			<sec:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN,ROLE_OPER">
+					<ul>
+						<li><a href="<c:url value="/loginform.html"/>">Login</a></li>
+						<li>Ainda não é cadastrado? <a href="<c:url value="/cadastro.html"/>" class="cadastre_form">Clique aqui</a></li>				
+					</ul>
+			</sec:authorize>
+			<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
+					<ul>						
+						<li><a href="<c:url value="/j_spring_security_logout"/>">Logout</a></li>						
+					</ul>
+			</sec:authorize>
 		</div>
 		<div class="quick-search">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<td><input class="criteria_qs_text" value="Pesquisa rapida" type="text" name="criteria_qs" id="criteria_qs" /></td>
 					<td><input class="criteria_qs_btn teste" type="submit" value="" class="btn_q_search" /></td>
-				</tr>
-				<tr>
-					<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_OPER')">
-						<td><a href="<c:url value="/j_spring_security_logout"/>" class="logout">Logout</a></td>
-					</sec:authorize>
 				</tr>
 			</table>
 		</div>
@@ -53,8 +54,8 @@
 				<div class="menu_middle">
 					<ul>						
 						<li><a href="<c:url value="/intern.html"/>">Home</a></li>
-						<li><a href="<c:url value="/user/index.html"/>">Login</a></li>
-						<li><a href="<c:url value="/cadastro.html"/>">Cadastro</a></li>
+						<li><a class="login_form" href="<c:url value="/login.html"/>">Empresa</a></li>
+						<li><a href="<c:url value="#"/>">Produto</a></li>
 						<li><a href="<c:url value="/admin/index.html"/>">Área adminstrativa</a></li>
 					</ul>
 				</div>
@@ -88,27 +89,57 @@
 <%-- 							</sec:authorize>				 --%>
 				</div>			
 			</form:form>
-			<ul class="list_posts">
+			<ul class="topics">
 				<c:forEach items="${topics}" var="topic">
 					<li>
-						<c:url value="/img/img_perfil.jpg" var="imgPath"/>
-						<div class="list_thumb"><img class="profile_pic" src="${imgPath}" border="0" alt="img"/></div>
-						<div class="list_cont">
-							<ul>
-								<li class="list_title_post">
-									<h4 class="title"><a href="<c:url value="/topic/${topic.id}.html"/>">${topic.topicTitle}</a></h4>
-									<h5>Criado em : ${topic.createdIn}</h5>									
-								</li>
-								<li><p><h5 class="sub-title"><c:out value="${topic.topicContent}"/></h5></p></li>
-								<li><img src="/GSC/img/star.png"><c:out value="${topic.person.username}"/></li>
-							</ul>
+						<c:set value="${topic.topicType}" var="imgName"/>
+						<c:url value="/img/${imgName}.png" var="imgPath"/>
+						<div class="topic_thumb"><img class="profile_pic" src="${imgPath}" border="0" alt="img"/></div>
+						<div class="topic">
+							<table><td>
+								<tr class="list_title_post">
+									<ul class="icons_actions">
+										<sec:authorize url="/admin/**">
+											<c:set value="true" var="admin"/>
+										</sec:authorize>
+										<c:if test="${topic.person.username == logged || admin==true}">
+											<li>
+												<c:url value="/topic/${topic.id}.html" var="urlEditPost"/>
+												<form:form action="${urlEditPost}" method="put">
+													<input class="btn_edit" type="submit" value="" />
+												</form:form>
+											</li>																											
+											<li>
+												<c:url value="/topic/${topic.id}.html" var="urlDeletePost"/>
+												<form:form action="${urlDeletePost}" method="delete">
+													<input class="btn_delete" type="submit" value=""/>
+												</form:form>
+											</li>	
+										</c:if>		
+									</ul>
+									<div class="title"><a href="<c:url value="/topic/${topic.id}.html"/>">${topic.topicTitle}</a></h4>
+									<div class="criadoem">Criado em : ${topic.createdIn}</div>
+									<tr><div class="img-user"><img src="/GSC/img/star.png"><c:out value="${topic.person.username}"/></div></tr>							
+								</tr>
+								<tr>
+									<div class="sub-title">
+									<c:choose>
+										<c:when test="${fn:length(topic.topicContent) > 90}">
+											<c:out value="${fn:substring(topic.topicContent,0,90)}"/>...
+										</c:when>
+										<c:otherwise>
+											<c:out value="${topic.topicContent}"/>
+										</c:otherwise>
+									</c:choose>
+									</div>
+								</tr>								
+							</td></table>
 						</div>
 					</li>
 				</c:forEach>																								
 			</ul>
 		</div>
 		<div id="col-right">
-			<img class="middle" src="${imgPath}" border="0" alt="img"/>
 		</div>
 	</div>
 </body>

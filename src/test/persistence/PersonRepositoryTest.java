@@ -4,18 +4,20 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import br.com.gsc.model.tableMapping.User;
-import br.com.gsc.repository.RepositoryImpl;
 import br.com.gsc.repository.objRepos.PersonRepository;
 
+@Configurable(dependencyCheck=true)
 public class PersonRepositoryTest {
 	
-	User p;
 	@Autowired
-	PersonRepository pr;
+	private PersonRepository pr;
+	
+	User p;
 	
 	@BeforeTest
 	public void beforeTest(){
