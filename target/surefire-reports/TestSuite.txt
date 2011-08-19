@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: TestSuite
--------------------------------------------------------------------------------
-Tests run: 6, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 3.137 sec <<< FAILURE!
-testAddPersonRepo(test.persistence.PersonRepositoryTest)  Time elapsed: 0.008 sec  <<< FAILURE!
-java.lang.NullPointerException
-	at test.persistence.PersonRepositoryTest.testAddPersonRepo(PersonRepositoryTest.java:30)
-
